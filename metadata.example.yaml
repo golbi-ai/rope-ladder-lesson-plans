@@ -1,0 +1,13 @@
+# Place this file outside the curriculum workspace or alongside its generated
+# artifacts, then pass its path explicitly to `rope-ladder publish`.
+format: 1
+name: Example codebase curriculum
+codebase: https://github.com/example/example
+description: Concise, evidence-backed onboarding material for an example public codebase.
+tags:
+  - go
+  - cli
+attestation:
+  # You attest that the source-derived curriculum may be disclosed publicly.
+  public_source: true
+  rights_to_publish: true
