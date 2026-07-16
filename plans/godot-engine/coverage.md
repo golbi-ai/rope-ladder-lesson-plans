@@ -1,0 +1,404 @@
+<!-- rope-ladder:begin document bb6452384d65d759d96baa7bbdec934b9096ed6b492f0c52e761e3ff47826715 -->
+# Coverage report
+
+This report makes source selection and evidence limits visible; it is not a claim that omitted material was analyzed.
+
+- Indexed files: 13946
+- Eligible source files: 13847
+- Files represented in provider prompts: 13847
+- Full bodies supplied: 215
+- Skeleton-only entries supplied: 13632
+- Analysis mode: batched (35 request(s))
+- Approximate input budget per request: 96000 tokens
+
+## Exclusions
+
+- 92: binary file
+- 190: excluded directory
+- 3: likely secret content
+- 3: likely secret path
+- 1: repository ignore rule
+
+## Evidence coverage
+
+- Both code and external evidence: 228
+- Code-only: 561
+- External-only: 0
+- No evidence: 0
+
+## Topics omitted for missing resolvable code evidence
+
+- 3D gizmos and viewport picking
+- Accessibility tree bridge
+- Accessibility tree updates
+- Android hardware-buffer interoperability
+- Android manifest registration
+- Animated WebP assembly
+- Animation tracks and compression
+- Atomics and memory ordering
+- Automated GDScript conformance tests
+- Avoidance-agent state
+- Backward references and color cache
+- Beta compute and geometry declarations
+- Body lifecycle and identity
+- Build profile and feature selection
+- Build-time source selection
+- C ABI declarations for platform APIs
+- C ABI structures and command declarations
+- C ABI structures and opaque handles
+- C SIMD intrinsics
+- C aggregates and opaque declarations
+- C conditional compilation and feature checks
+- C dynamic-library function pointers
+- C preprocessor feature gating
+- C qualifiers and aliasing contracts
+- C structs and linked state
+- C# custom awaiters and task scheduling
+- C++ asynchronous work queues
+- C++ atomic reference counting
+- C++ byte-buffer processing
+- C++ class abstraction and multiple inheritance
+- C++ classes and namespaces
+- C++ classes and templates for custom containers
+- C++ const references and template containers
+- C++ const-reference interfaces
+- C++ dispatch loaders
+- C++ dispatcher configuration
+- C++ generic templates
+- C++ generic typed IR access
+- C++ generic vector and matrix programming
+- C++ hash specializations
+- C++ hidden implementation types
+- C++ inheritance for shader back ends
+- C++ local type inference and structured bindings
+- C++ move semantics
+- C++ move semantics and RAII cleanup
+- C++ nested resource records
+- C++ ownership-aware IR graphs
+- C++ pointer-based API interoperation
+- C++ resource ownership and move transfer
+- C++ runtime type adaptation
+- C++ shared handle ownership
+- C++ standard-library collection interfaces
+- C++ tagged command layouts and casts
+- C++ template containers and references
+- C++ template factory registration
+- C++ template traits and conditional selection
+- C++ templates and inline math
+- C++ typed flag wrappers
+- C++ typed resource containers
+- C++ unique-handle ownership
+- C++ variadic template undo methods
+- Camera feed capture and decoding
+- Character controllers
+- Compile-time cryptographic configuration
+- Constant-time utility operations
+- Constants, enums, and forward references
+- Constructive solid geometry
+- Continuous collision detection
+- Convex decomposition
+- Core device and resource declarations
+- Cryptographic operation dispatch
+- DMA-BUF buffer negotiation
+- Debug visualization
+- Decode output buffers
+- Driver build composition
+- Export plugin customization
+- Extensible C API structures
+- Extension dependency introspection
+- FBX scene import
+- Format metadata queries
+- Forward clustered and mobile scene rendering
+- Function contracts
+- GDExtension compatibility testing
+- GDScript inferred local variables
+- GDScript resource and token caching
+- GDScript tokenization and parsing
+- GDScript typed declarations
+- GLES3 shader pipeline
+- GLSL GPU shader data and entry points
+- GLSL preprocessing and builder substitution
+- GLSL resource interfaces
+- GLSL shader interfaces
+- GLSL stage interfaces
+- GPU resource lifecycle
+- GUI layout editing
+- Graph editing
+- HarfBuzz Graphite2 shaping bridge
+- Image format adaptation
+- Image loading
+- Incremental image rescaling
+- Interaction profiles and suggested bindings
+- JSON-RPC action dispatch
+- Jolt-backed 3D physics
+- MSDF artifact correction
+- Mesh and height-field collision
+- Mesh binary codecs
+- Meshlet construction and mesh optimization
+- Mipmap-aware texture compression
+- Module build composition
+- Near-lossless preprocessing
+- Node hierarchy
+- Objective-C Apple interoperation
+- OpenType color glyph tables
+- OpenType glyph substitution and positioning
+- OpenType variable-font coordinates
+- OpenXR actions and action sets
+- OpenXR graphics backend adapters
+- Packed scene serialization
+- Physics scene assembly
+- Platform GPU resource interoperation
+- Platform rendering surfaces
+- Platform surface adapters
+- Platform surface creation
+- Pointers, references, and const views
+- Preloading and script types
+- Public encoding and decoding contract
+- Python SCons build scripts
+- Python SCons source manifests
+- Python XML document modeling
+- Python build and generation scripts
+- Python conditional build scripts
+- Python platform-conditional builds
+- Python process automation
+- RIFF/WebP container muxing
+- Raw storage, allocation, and byte-layout decoding
+- Reciprocal velocity selection
+- Recorded GPU command graph
+- RenderingDevice GPU lightmap baking
+- Retained paint scenes
+- SIMD math and parallel algorithms
+- SPIR-V control-flow analysis
+- SPIR-V intermediate representation
+- SVG import and scene construction
+- SVG paths and styles
+- Scene multiplayer and RPC
+- Scene packing and instantiation
+- Scene visibility culling
+- Script editing and navigation
+- Shader build-time generation
+- Shader preprocessing
+- Shader source compilation and reflection
+- Shader source emission
+- Shader source generation
+- Signals and stored connections
+- Signed-distance-field surface extraction
+- Soft-body simulation
+- Software rasterization
+- Software render effects
+- Spatial collision acceleration
+- Spatial entities, contexts, and snapshots
+- Spatial neighbor search
+- Specialized 3D authoring
+- SwiftUI engine host
+- Text shaping service
+- Text shaping state
+- Three-dimensional reciprocal avoidance
+- Triangle mesh geometry
+- UV atlas parameterization and packing
+- Validation stages
+- Visual shader graphs
+- Vulkan Video codec parameter structures
+- Vulkan dispatch scopes
+- Vulkan dispatch tables
+- Vulkan extension catalog
+- Vulkan handle lifetime hierarchy
+- Vulkan memory allocation
+- Vulkan platform surface creation
+- Wayland commit timing and FIFO constraints
+- Wayland input and window extensions
+- Wayland protocol objects
+- Wayland surface geometry and fractional scale
+- glTF animation tracks and interpolation
+- glTF asset interchange
+- glTF indexed asset model
+- glTF skinning and skeleton construction
+- native 2D contacts, areas, and joints
+- native 3D soft-body simulation
+- playlist and synchronized audio playback
+- sparse 3D grid mapping
+
+## Entities omitted for missing resolvable code evidence
+
+- AccessKitNode
+- AccessKitTree
+- Agent2D
+- Animation
+- AnimationTrack
+- AudioBusLayout
+- AudioStreamInteractive
+- Body
+- CSGShape3D
+- CSharpScript
+- Canvas
+- ClassDef
+- ClassInfo
+- ClassStatusProgress
+- Completion Test Configuration
+- DAP::Breakpoint
+- EditorSettings
+- EditorUndoRedoManager::History
+- GDScript
+- GDScriptParser::Node
+- GLTFAccessor
+- GLTFAnimation
+- GLTFAnimation channel
+- GLTFAsset
+- GLTFScene
+- GLTFState
+- GodotCollisionObject3D
+- GodotSpace2D
+- GraphEditConnection
+- GridMap
+- GridMesh
+- IVHACD::ConvexHull
+- Image
+- ImageHeader
+- InputMap::Action
+- JSON-RPC message
+- Joint
+- JoltBody3D
+- JoltShape3D
+- KTX Level Index Entry
+- ManifestFile
+- Mesh
+- MeshRelationD
+- NavigationPathQueryResult2D
+- Node
+- Obstacle2D
+- OpenXRAction
+- OpenXRActionSet
+- OpenXRIPBinding
+- OpenXRInteractionProfile
+- Paint
+- PhysicsRayQueryParameters3D
+- PhysicsScene
+- PngInfo
+- PreviewRequest
+- ProjectCatalogItem
+- ProjectSettings::VariantContainer
+- RaycastOccluder
+- RecordedCommand
+- ReferenceCounter<HeaderType>
+- RegExMatch
+- ReplicationProperty
+- ResourceLoader::ThreadLoadTask
+- ResourcePreviewCacheEntry
+- ResourceTracker
+- SPIRType
+- SPIRVariable
+- ShapedTextDataAdvanced
+- SharedHandle<HandleType>
+- Silf
+- Slot
+- StreamingBuffer
+- SwapchainHeader
+- TObjectReflection
+- TProgram
+- TShader
+- Test Project Configuration
+- TextServer::Glyph
+- TileMapPattern
+- Translation Message
+- TypeName
+- VCS Diff File
+- VCS Diff Hunk
+- VCS Diff Line
+- VHACD::Mesh
+- VP8LBackwardRefs
+- VehicleTransmissionSettings
+- VisualShaderGraph
+- VkAndroidHardwareBufferPropertiesANDROID
+- VkAndroidSurfaceCreateInfoKHR
+- VkCudaLaunchInfoNV
+- VkExecutionGraphPipelineCreateInfoAMDX
+- VkExportMetalObjectsInfoEXT
+- VkIOSSurfaceCreateInfoMVK
+- VkMacOSSurfaceCreateInfoMVK
+- VkMetalSurfaceCreateInfoEXT
+- VkScreenSurfaceCreateInfoQNX
+- VkSurfaceCreateInfoOHOS
+- VkWaylandSurfaceCreateInfoKHR
+- WebPAnimEncoder
+- WebPAuxStats
+- WebPDecBuffer
+- WebPMemoryWriter
+- msdfgen::BitmapSection<float, N>
+- spv::Block
+- spv::Module
+- vk::UniqueHandle<Type, Dispatch>
+- wl_buffer
+- zwp_linux_buffer_params_v1
+
+## Architecture components omitted for missing resolvable code evidence
+
+- AccessKit C ABI
+- Advanced text server
+- Betsy GPU texture compressor
+- BodyManager
+- C++ metadata utilities
+- CSG editor tooling
+- CSG runtime
+- Clipper2 polygon engine
+- Driver build composition
+- Editor source manifests
+- Embree math and parallel support
+- Fallback text server
+- GDScript integration test runner
+- GDScript runtime
+- GDScript workspace index
+- Graphite2 font-table access
+- HarfBuzz Graphite2 adapter
+- HarfBuzz OpenType shaper
+- Image data API integration
+- Input dispatch
+- Interaction-profile metadata
+- JobSystem
+- MSDF generator
+- Manifold CSG evaluator
+- Manifold collision and SDF processing
+- Manifold mesh kernel
+- Manifold public API
+- Metal rendering backend
+- Module build assembly
+- OpenXR API core
+- OpenXR extension wrappers
+- OpenXR spatial entities
+- Platform WSI C headers
+- Platform camera backends
+- Platform interoperation C headers
+- Profiling integration
+- Project catalog
+- RVO2 2D KD-tree
+- RVO2 3D simulator
+- Regular-expression module
+- SCons source partitions
+- SPIR-V reflection API
+- SPIRV-Cross parser and IR
+- SPIRV-Cross source emitters
+- Scene API tests
+- TF-PSA-Crypto
+- Test project configuration
+- ThorVG SVG importer
+- ThorVG loader framework
+- ThorVG public graphics API
+- ThorVG software renderer
+- ThorVG task scheduler
+- VHACD convex-decomposition library
+- Visual Shader module build
+- Volk Vulkan dispatcher
+- Vulkan C core API
+- Vulkan beta declarations
+- Vulkan-Hpp C++ façade
+- Vulkan-Hpp RAII wrappers
+- Vulkan-Hpp configuration
+- Vulkan-Hpp shared handles
+- Wayland protocol schemas
+- glTF test assets
+- glTF working state
+- glslang preprocessor
+- glslang shader and program API
+- meshoptimizer
+- ufbx FBX importer
+- xatlas UV atlas generator
+<!-- rope-ladder:end document -->
