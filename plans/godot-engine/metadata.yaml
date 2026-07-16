@@ -1,0 +1,13 @@
+format: 1
+name: Godot Engine curriculum
+codebase: https://github.com/godotengine/godot
+description: Evidence-backed onboarding curriculum for the Godot Engine C++ game engine, covering the core runtime, scene systems, rendering, editor/export tooling, and platforms.
+tags:
+  - cpp
+  - game-engine
+  - godot
+  - graphics
+  - tooling
+attestation:
+  public_source: true
+  rights_to_publish: true
