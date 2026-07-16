@@ -1,4 +1,4 @@
-<!-- rope-ladder:begin document d86d56d6a5888e7aaf9c924bfabf9f884bf5fc97aff88504fcd71a0975ed68b2 -->
+<!-- rope-ladder:begin document 53c3513d7f31921701d422764b4fe93c3de784839de4b6966ff1659a89eb9f0a -->
 # Entity reference
 
 Only persistent, externally exchanged, or cross-cutting structures appear here.
@@ -20,8 +20,8 @@ Relationships:
 - AABB → **TriangleMesh** (one-to-many): TriangleMesh acceleration nodes partition bounds associated with mesh triangles.
 
 Evidence:
-- Code: `core/math/aabb.h` — AABB
-- Code: `core/math/aabb.cpp` — AABB::merge
+- Code: `core/math/aabb.h:38` — AABB
+- Code: `core/math/aabb.cpp:339` — AABB::merge
 - Code: `core/math/triangle_mesh.h` — TriangleMesh::BVH
 
 ## AABBTreeBuilder
@@ -39,8 +39,8 @@ Lifecycle: Populated during tree construction, queried for nodes and triangles a
 | `mMaxTrianglesPerLeaf` | `uint` | Limits triangles placed in each leaf. |
 
 Evidence:
-- Code: `thirdparty/jolt_physics/Jolt/AABBTree/AABBTreeBuilder.h` — AABBTreeBuilder
-- Code: `thirdparty/jolt_physics/Jolt/AABBTree/AABBTreeBuilder.cpp` — AABBTreeBuilder
+- Code: `thirdparty/jolt_physics/Jolt/AABBTree/AABBTreeBuilder.h:35` — AABBTreeBuilder
+- Code: `thirdparty/jolt_physics/Jolt/AABBTree/AABBTreeBuilder.cpp:7` — AABBTreeBuilder
 
 ## APKExportData
 
@@ -51,8 +51,8 @@ Role: carries export-operation data
 Lifecycle: Used during an Android export operation; the supplied index does not expose its member layout or retention rules.
 
 Evidence:
-- Code: `platform/android/export/export_plugin.h` — APKExportData
-- Code: `platform/android/export/export_plugin.h` — EditorExportPlatformAndroid
+- Code: `platform/android/export/export_plugin.h:78` — APKExportData
+- Code: `platform/android/export/export_plugin.h:64` — EditorExportPlatformAndroid
 
 ## AccessibilityElement
 
@@ -66,7 +66,7 @@ Relationships:
 - AccessibilityElement → **AccessibilityElement** (one-to-many): An accessibility element can be resolved as another element's child.
 
 Evidence:
-- Code: `drivers/accesskit/accessibility_server_accesskit.h` — struct AccessibilityElement
+- Code: `drivers/accesskit/accessibility_server_accesskit.h:45` — struct AccessibilityElement
 - Code: `drivers/accesskit/accessibility_server_accesskit.cpp` — rid_owner.get_or_null and child_ae lookup
 
 ## ApplicationInfo
@@ -84,7 +84,7 @@ Lifecycle: A caller populates the record and an `InstanceCreateInfo` may point t
 | `pNext` | `const void *` | Optional extension-chain pointer. |
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp` — struct ApplicationInfo
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp:6883` — struct ApplicationInfo
 
 ## Array
 
@@ -102,9 +102,9 @@ Relationships:
 - Array → **Variant** (one-to-many): An Array stores an ordered sequence of Variant elements.
 
 Evidence:
-- Code: `core/variant/array.h` — Array
-- Code: `core/variant/array.cpp` — ArrayPrivate
-- Code: `core/variant/container_type_validate.h` — ContainerTypeValidate
+- Code: `core/variant/array.h:47` — Array
+- Code: `core/variant/array.cpp:45` — ArrayPrivate
+- Code: `core/variant/container_type_validate.h:43` — ContainerTypeValidate
 
 ## AssemblyHasScriptsAttribute
 
@@ -123,8 +123,8 @@ Relationships:
 - AssemblyHasScriptsAttribute → **ScriptPathAttribute** (one-to-many): One assembly-level script inventory can describe many script types, each of which can carry script-path metadata.
 
 Evidence:
-- Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/Attributes/AssemblyHasScriptsAttribute.cs` — AssemblyHasScriptsAttribute
-- Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/ScriptManagerBridge.cs` — ScriptManagerBridge
+- Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/Attributes/AssemblyHasScriptsAttribute.cs:13` — AssemblyHasScriptsAttribute
+- Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/ScriptManagerBridge.cs:20` — ScriptManagerBridge
 
 ## AudioStreamInteractive Transition
 
@@ -140,7 +140,7 @@ Lifecycle: A transition is stored in an AudioStreamInteractive transition map an
 
 Evidence:
 - Code: `modules/interactive_music/audio_stream_interactive.h` — Transition and TransitionKey
-- Code: `modules/interactive_music/audio_stream_interactive.cpp` — TransitionKey(keys[i].x, keys[i].y)
+- Code: `modules/interactive_music/audio_stream_interactive.cpp:202` — TransitionKey(keys[i].x, keys[i].y)
 
 ## BVHN
 
@@ -158,9 +158,9 @@ Relationships:
 - BVHN → **PrimRef** (one-to-many): One hierarchy is built from many primitive-reference records.
 
 Evidence:
-- Code: `thirdparty/embree/kernels/bvh/bvh.h` — BVHN
-- Code: `thirdparty/embree/kernels/bvh/bvh.h` — primTy
-- Code: `thirdparty/embree/kernels/bvh/bvh_refit.h` — BVHNRefitter
+- Code: `thirdparty/embree/kernels/bvh/bvh.h:42` — BVHN
+- Code: `thirdparty/embree/kernels/bvh/bvh.h:92` — primTy
+- Code: `thirdparty/embree/kernels/bvh/bvh_refit.h:13` — BVHNRefitter
 
 ## BasisFileHeader
 
@@ -181,8 +181,8 @@ Relationships:
 - BasisFileHeader → **BasisSliceDescriptor** (one-to-many): One header addresses the array of descriptors for its compressed slices.
 
 Evidence:
-- Code: `thirdparty/basis_universal/transcoder/basisu_file_headers.h` — basis_file_header
-- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.cpp` — basisu_transcoder::get_file_info
+- Code: `thirdparty/basis_universal/transcoder/basisu_file_headers.h:99` — basis_file_header
+- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.cpp:12204` — basisu_transcoder::get_file_info
 
 ## BasisSliceDescriptor
 
@@ -205,8 +205,8 @@ Relationships:
 - BasisSliceDescriptor → **BasisFileHeader** (many-to-one): Each descriptor belongs to the header-addressed descriptor array of one Basis file.
 
 Evidence:
-- Code: `thirdparty/basis_universal/transcoder/basisu_file_headers.h` — basis_slice_desc
-- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.cpp` — basisu_transcoder::transcode_slice
+- Code: `thirdparty/basis_universal/transcoder/basisu_file_headers.h:32` — basis_slice_desc
+- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.cpp:12428` — basisu_transcoder::transcode_slice
 
 ## BrotliDecoderState
 
@@ -222,8 +222,8 @@ Lifecycle: Initialized for decoding, advanced as compressed input is consumed an
 | `context_lookup` | `const uint8_t*` | Pointer to context-model lookup data. |
 
 Evidence:
-- Code: `thirdparty/brotli/dec/state.h` — BrotliDecoderStateStruct
-- Code: `thirdparty/brotli/dec/decode.c` — BrotliDecoderTakeOutput
+- Code: `thirdparty/brotli/dec/state.h:250` — BrotliDecoderStateStruct
+- Code: `thirdparty/brotli/dec/decode.c:2882` — BrotliDecoderTakeOutput
 
 ## BuildDiagnostic
 
@@ -244,8 +244,8 @@ Lifecycle: Build tooling writes diagnostics to the issues CSV, BuildProblemsView
 | `ProjectFile` | `string?` | Project file associated with the diagnostic. |
 
 Evidence:
-- Code: `modules/mono/editor/GodotTools/GodotTools/Build/BuildDiagnostic.cs` — BuildDiagnostic
-- Code: `modules/mono/editor/GodotTools/GodotTools/Build/BuildProblemsView.cs` — ReadDiagnosticsFromFile
+- Code: `modules/mono/editor/GodotTools/GodotTools/Build/BuildDiagnostic.cs:3` — BuildDiagnostic
+- Code: `modules/mono/editor/GodotTools/GodotTools/Build/BuildProblemsView.cs:59` — ReadDiagnosticsFromFile
 
 ## CSGBrush
 
@@ -261,7 +261,7 @@ Lifecycle: Created from CSG shape inputs, merged or processed by CSG operations,
 
 Evidence:
 - Code: `modules/csg/csg.h` — CSGBrush and Face
-- Code: `modules/csg/csg_shape.cpp` — p_mesh_merge->faces
+- Code: `modules/csg/csg_shape.cpp:408` — p_mesh_merge->faces
 
 ## Callable
 
@@ -276,8 +276,8 @@ Lifecycle: Created through a private constructor with a native pointer; the supp
 | `nativeCallablePointer` | `Long` | Private native callable pointer stored by the wrapper. |
 
 Evidence:
-- Code: `platform/android/java/lib/src/main/java/org/godotengine/godot/variant/Callable.kt` — Callable
-- Code: `platform/android/variant/callable_jni.cpp` — callable_jni
+- Code: `platform/android/java/lib/src/main/java/org/godotengine/godot/variant/Callable.kt:2` — Callable
+- Code: `platform/android/variant/callable_jni.cpp:2` — callable_jni
 
 ## CameraFeed
 
@@ -288,8 +288,8 @@ Role: Represents a live camera stream exposed through a CameraServer backend.
 Lifecycle: Created by a platform camera backend, receives decoded capture data while active, and is released with the backend or feed.
 
 Evidence:
-- Code: `modules/camera/camera_android.h` — CameraFeedAndroid : public CameraFeed
-- Code: `modules/camera/camera_feed_linux.h` — CameraFeedLinux : public CameraFeed
+- Code: `modules/camera/camera_android.h:57` — CameraFeedAndroid : public CameraFeed
+- Code: `modules/camera/camera_feed_linux.h:42` — CameraFeedLinux : public CameraFeed
 
 ## ColladaParseState
 
@@ -308,7 +308,7 @@ Lifecycle: Created for a COLLADA parse, filled with source data, consumed by Col
 
 Evidence:
 - Code: `editor/import/3d/collada.h` — Collada::State
-- Code: `editor/import/3d/editor_import_collada.cpp` — ColladaImport
+- Code: `editor/import/3d/editor_import_collada.cpp:48` — ColladaImport
 
 ## CollisionShape2D
 
@@ -328,7 +328,7 @@ Relationships:
 - CollisionShape2D → **Shape2D** (many-to-one): Each CollisionShape2D has one assigned Shape2D resource.
 
 Evidence:
-- Code: `doc/classes/CollisionShape2D.xml` — CollisionShape2D
+- Code: `doc/classes/CollisionShape2D.xml:2` — CollisionShape2D
 
 ## ConfigFile
 
@@ -348,7 +348,7 @@ Relationships:
 - ConfigFile → **Variant** (one-to-many): A configuration file stores Variant values for its section and key entries.
 
 Evidence:
-- Code: `doc/classes/ConfigFile.xml` — ConfigFile
+- Code: `doc/classes/ConfigFile.xml:2` — ConfigFile
 
 ## ConstraintSettings
 
@@ -371,7 +371,7 @@ Relationships:
 - ConstraintSettings → **TwoBodyConstraint** (one-to-one): A concrete two-body settings object creates one corresponding runtime two-body constraint instance.
 
 Evidence:
-- Code: `thirdparty/jolt_physics/Jolt/Physics/Constraints/Constraint.h` — ConstraintSettings
+- Code: `thirdparty/jolt_physics/Jolt/Physics/Constraints/Constraint.h:64` — ConstraintSettings
 - Code: `thirdparty/jolt_physics/Jolt/Physics/Constraints/Constraint.cpp` — ConstraintSettings RTTI registration and SaveBinaryState
 
 ## DAP::Capabilities
@@ -383,8 +383,8 @@ Role: Describes supported protocol features to a debug client.
 Lifecycle: Produced during protocol initialization and returned to the client as protocol data.
 
 Evidence:
-- Code: `editor/debugger/debug_adapter/debug_adapter_types.h` — struct Capabilities
-- Code: `editor/debugger/debug_adapter/debug_adapter_protocol.h` — class DebugAdapterProtocol : public Object
+- Code: `editor/debugger/debug_adapter/debug_adapter_types.h:144` — struct Capabilities
+- Code: `editor/debugger/debug_adapter/debug_adapter_protocol.h:72` — class DebugAdapterProtocol : public Object
 - External (primary, verified): [Debug Adapter Protocol Overview](https://microsoft.github.io/debug-adapter-protocol/overview.html), accessed 2026-07-16
 
 ## DAP::Source
@@ -397,7 +397,7 @@ Lifecycle: Created or fetched while protocol requests are processed and emitted 
 
 Evidence:
 - Code: `editor/debugger/debug_adapter/debug_adapter_types.h` — struct Source and struct Breakpoint
-- Code: `editor/debugger/debug_adapter/debug_adapter_protocol.h` — const DAP::Source &fetch_source(const String &p_path)
+- Code: `editor/debugger/debug_adapter/debug_adapter_protocol.h:112` — const DAP::Source &fetch_source(const String &p_path)
 
 ## DDSFormatInfo
 
@@ -412,8 +412,8 @@ Lifecycle: Defined in the DDS format table, selected for a load or save operatio
 | `name` | `const char *` | Descriptor name initialized by the structure. |
 
 Evidence:
-- Code: `modules/dds/dds_enums.h` — DDSFormatInfo
-- Code: `modules/dds/texture_loader_dds.cpp` — dds_format_info[p_dds_format]
+- Code: `modules/dds/dds_enums.h:181` — DDSFormatInfo
+- Code: `modules/dds/texture_loader_dds.cpp:148` — dds_format_info[p_dds_format]
 
 ## Dictionary
 
@@ -431,9 +431,9 @@ Relationships:
 - Dictionary → **Variant** (one-to-many): A Dictionary contains Variant keys and Variant values for its entries.
 
 Evidence:
-- Code: `core/variant/dictionary.h` — Dictionary
-- Code: `core/variant/dictionary.cpp` — DictionaryPrivate
-- Code: `core/variant/container_type_validate.h` — ContainerTypeValidate
+- Code: `core/variant/dictionary.h:46` — Dictionary
+- Code: `core/variant/dictionary.cpp:43` — DictionaryPrivate
+- Code: `core/variant/container_type_validate.h:43` — ContainerTypeValidate
 
 ## ENetCallbacks
 
@@ -450,9 +450,9 @@ Lifecycle: Initialized to malloc, free, and abort; optionally replaced by enet_i
 | `no_memory` | `ENET_CALLBACK function pointer` | Handles allocation failure. |
 
 Evidence:
-- Code: `thirdparty/enet/enet/callbacks.h` — ENetCallbacks
-- Code: `thirdparty/enet/callbacks.c` — callbacks
-- Code: `thirdparty/enet/callbacks.c` — enet_initialize_with_callbacks
+- Code: `thirdparty/enet/enet/callbacks.h:15` — ENetCallbacks
+- Code: `thirdparty/enet/callbacks.c:2` — callbacks
+- Code: `thirdparty/enet/callbacks.c:11` — enet_initialize_with_callbacks
 
 ## ENetConnection
 
@@ -466,7 +466,7 @@ Relationships:
 - ENetConnection → **ENetPacketPeer** (one-to-many): One connection can expose many peer wrappers through service and get_peers operations.
 
 Evidence:
-- Code: `modules/enet/enet_connection.h` — ENetConnection : public RefCounted
+- Code: `modules/enet/enet_connection.h:43` — ENetConnection : public RefCounted
 - Code: `modules/enet/doc_classes/ENetPacketPeer.xml` — ENetConnection.service and ENetConnection.get_peers description
 
 ## ENetHost
@@ -485,8 +485,8 @@ Relationships:
 - ENetHost → **ENetPeer** (one-to-many): One host allocates capacity for and manages multiple peers.
 
 Evidence:
-- Code: `thirdparty/enet/host.c` — enet_host_create
-- Code: `thirdparty/enet/enet/enet.h` — _ENetHost
+- Code: `thirdparty/enet/host.c:29` — enet_host_create
+- Code: `thirdparty/enet/enet/enet.h:41` — _ENetHost
 
 ## ENetMultiplayerPeer
 
@@ -500,7 +500,7 @@ Relationships:
 - ENetMultiplayerPeer → **ENetConnection** (one-to-one): One multiplayer peer uses an ENet connection context for its ENet-backed operation.
 
 Evidence:
-- Code: `modules/enet/enet_multiplayer_peer.h` — ENetMultiplayerPeer : public MultiplayerPeer
+- Code: `modules/enet/enet_multiplayer_peer.h:39` — ENetMultiplayerPeer : public MultiplayerPeer
 - Code: `modules/enet/doc_classes/ENetMultiplayerPeer.xml` — ENetMultiplayerPeer description
 
 ## ENetPacketPeer
@@ -512,7 +512,7 @@ Role: Exposes peer-level packet interaction through the engine packet-peer abstr
 Lifecycle: Retrieved from a connection during service or peer enumeration and remains usable while its underlying peer association is valid.
 
 Evidence:
-- Code: `modules/enet/enet_packet_peer.h` — ENetPacketPeer : public PacketPeer
+- Code: `modules/enet/enet_packet_peer.h:37` — ENetPacketPeer : public PacketPeer
 - Code: `modules/enet/doc_classes/ENetPacketPeer.xml` — ENetPacketPeer description
 
 ## ENetPeer
@@ -531,8 +531,8 @@ Relationships:
 - ENetPeer → **ENetHost** (many-to-one): Many peers are managed by one host.
 
 Evidence:
-- Code: `thirdparty/enet/enet/enet.h` — _ENetPeer
-- Code: `thirdparty/enet/protocol.c` — enet_protocol_change_state
+- Code: `thirdparty/enet/enet/enet.h:271` — _ENetPeer
+- Code: `thirdparty/enet/protocol.c:36` — enet_protocol_change_state
 
 ## EXRImage
 
@@ -543,7 +543,7 @@ Role: Image payload type used by TinyEXR's public EXR API.
 Lifecycle: The supplied header indexes EXRImage API usage, but its construction and retirement bodies are not included in the supplied excerpt.
 
 Evidence:
-- Code: `thirdparty/tinyexr/tinyexr.h` — EXRImage
+- Code: `thirdparty/tinyexr/tinyexr.h:358` — EXRImage
 
 ## EditedScene
 
@@ -564,7 +564,7 @@ Lifecycle: Held in EditorData while a scene is edited; editor state and selectio
 
 Evidence:
 - Code: `editor/editor_data.h` — EditorData::EditedScene
-- Code: `editor/editor_data.cpp` — EditorData::load_editor_plugin_states_from_config
+- Code: `editor/editor_data.cpp:385` — EditorData::load_editor_plugin_states_from_config
 
 ## EditorExport
 
@@ -586,7 +586,7 @@ Relationships:
 - EditorExport → **EditorExportPlatform** (one-to-many): One export registry owns many target platform adapters.
 
 Evidence:
-- Code: `editor/export/editor_export.h` — EditorExport
+- Code: `editor/export/editor_export.h:38` — EditorExport
 
 ## EditorExportPlatform
 
@@ -606,7 +606,7 @@ Relationships:
 - EditorExportPlatform → **EditorExportPlatform::ExportMessage** (one-to-many): One target platform can collect many export messages.
 
 Evidence:
-- Code: `editor/export/editor_export_platform.h` — EditorExportPlatform
+- Code: `editor/export/editor_export_platform.h:51` — EditorExportPlatform
 
 ## EditorExportPlatform::ExportMessage
 
@@ -653,7 +653,7 @@ Relationships:
 - EditorExportPreset → **EditorExportPlatform** (many-to-one): Many presets can be associated with one target platform.
 
 Evidence:
-- Code: `editor/export/editor_export_preset.h` — EditorExportPreset
+- Code: `editor/export/editor_export_preset.h:38` — EditorExportPreset
 
 ## EditorFileSystemDirectory
 
@@ -676,8 +676,8 @@ Relationships:
 - EditorFileSystemDirectory → **EditorFileSystemDirectory::FileInfo** (one-to-many): One directory record can contain many indexed file records.
 
 Evidence:
-- Code: `editor/file_system/editor_file_system.h` — EditorFileSystemDirectory
-- Code: `editor/file_system/editor_file_system.cpp` — EditorFileSystem::_scan_filesystem
+- Code: `editor/file_system/editor_file_system.h:46` — EditorFileSystemDirectory
+- Code: `editor/file_system/editor_file_system.cpp:409` — EditorFileSystem::_scan_filesystem
 
 ## EditorFileSystemDirectory::FileInfo
 
@@ -702,8 +702,8 @@ Relationships:
 - EditorFileSystemDirectory::FileInfo → **EditorFileSystemDirectory::FileInfo** (one-to-many): One file record can store many dependency references that are resolved to current paths when possible.
 
 Evidence:
-- Code: `editor/file_system/editor_file_system.h` — EditorFileSystemDirectory::FileInfo
-- Code: `editor/file_system/editor_file_system.cpp` — EditorFileSystemDirectory::get_file_deps
+- Code: `editor/file_system/editor_file_system.h:165` — EditorFileSystemDirectory::FileInfo
+- Code: `editor/file_system/editor_file_system.cpp:143` — EditorFileSystemDirectory::get_file_deps
 
 ## EditorTranslationList
 
@@ -719,7 +719,7 @@ Lifecycle: Generated by make_translations during the build and emitted into C++ 
 | `data` | `const unsigned char *` | Generated translation byte data. |
 
 Evidence:
-- Code: `editor/editor_builders.py` — make_translations
+- Code: `editor/editor_builders.py:71` — make_translations
 
 ## Expected Result Fixture
 
@@ -738,8 +738,8 @@ Relationships:
 - Expected Result Fixture → **Test Script Fixture** (one-to-one): Each expected result names the outcome of one same-basename script fixture.
 
 Evidence:
-- Code: `modules/gdscript/tests/scripts/analyzer/features/lambda_typed.out` — GDTEST_OK
-- Code: `modules/gdscript/tests/scripts/runtime/errors/invalid_cast.out` — GDTEST_RUNTIME_ERROR
+- Code: `modules/gdscript/tests/scripts/analyzer/features/lambda_typed.out:1` — GDTEST_OK
+- Code: `modules/gdscript/tests/scripts/runtime/errors/invalid_cast.out:1` — GDTEST_RUNTIME_ERROR
 
 ## FBXDocument
 
@@ -753,7 +753,7 @@ Relationships:
 - FBXDocument → **FBXState** (one-to-one): One document conversion operation receives one FBXState object as its working import state.
 
 Evidence:
-- Code: `modules/fbx/fbx_document.h` — FBXDocument : public GLTFDocument
+- Code: `modules/fbx/fbx_document.h:40` — FBXDocument : public GLTFDocument
 - Code: `modules/fbx/fbx_document.cpp` — p_state FBX conversion accesses
 
 ## FBXState
@@ -769,8 +769,8 @@ Lifecycle: Created for an FBX import, populated during conversion, supplied to s
 | `allow_geometry_helper_nodes` | `bool` | Records whether auxiliary geometry-helper nodes were used during import. |
 
 Evidence:
-- Code: `modules/fbx/fbx_state.h` — FBXState : public GLTFState
-- Code: `modules/fbx/doc_classes/FBXState.xml` — allow_geometry_helper_nodes
+- Code: `modules/fbx/fbx_state.h:39` — FBXState : public GLTFState
+- Code: `modules/fbx/doc_classes/FBXState.xml:11` — allow_geometry_helper_nodes
 
 ## FTC_SNodeRec
 
@@ -787,8 +787,8 @@ Lifecycle: The small-bitmap cache creates and uses nodes through its cache callb
 | `sbits` | `FTC_SBitRec[FTC_SBIT_ITEMS_PER_NODE]` | Fixed array of small bitmap records. |
 
 Evidence:
-- Code: `thirdparty/freetype/src/cache/ftcsbits.h` — FTC_SNodeRec_
-- Code: `thirdparty/freetype/src/cache/ftccback.h` — ftc_snode_new
+- Code: `thirdparty/freetype/src/cache/ftcsbits.h:31` — FTC_SNodeRec_
+- Code: `thirdparty/freetype/src/cache/ftccback.h:45` — ftc_snode_new
 
 ## FT_BZip2FileRec
 
@@ -813,8 +813,8 @@ Relationships:
 - FT_BZip2FileRec → **FT_Stream** (one-to-one): Each wrapper retains one source stream and one embedding stream.
 
 Evidence:
-- Code: `thirdparty/freetype/src/bzip2/ftbzip2.c` — FT_BZip2FileRec_
-- Code: `thirdparty/freetype/src/bzip2/ftbzip2.c` — ft_bzip2_stream_close
+- Code: `thirdparty/freetype/src/bzip2/ftbzip2.c:102` — FT_BZip2FileRec_
+- Code: `thirdparty/freetype/src/bzip2/ftbzip2.c:439` — ft_bzip2_stream_close
 
 ## FT_Stream
 
@@ -836,8 +836,8 @@ Relationships:
 - FT_Stream → **FT_BZip2FileRec** (one-to-one): An adapted FT_Stream stores one Bzip2 wrapper in descriptor.pointer.
 
 Evidence:
-- Code: `thirdparty/freetype/src/bzip2/ftbzip2.c` — FT_Stream_OpenBzip2
-- Code: `thirdparty/freetype/src/bzip2/ftbzip2.c` — ft_bzip2_file_fill_input
+- Code: `thirdparty/freetype/src/bzip2/ftbzip2.c:471` — FT_Stream_OpenBzip2
+- Code: `thirdparty/freetype/src/bzip2/ftbzip2.c:249` — ft_bzip2_file_fill_input
 
 ## Face
 
@@ -856,8 +856,8 @@ Relationships:
 - Face → **Segment** (one-to-many): Each shaped segment retains the face used to obtain glyph and layout data.
 
 Evidence:
-- Code: `thirdparty/graphite/src/inc/Face.h` — graphite2::Face
-- Code: `thirdparty/graphite/src/Face.cpp` — Face::chooseSilf
+- Code: `thirdparty/graphite/src/inc/Face.h:202` — graphite2::Face
+- Code: `thirdparty/graphite/src/Face.cpp:197` — Face::chooseSilf
 
 ## FeatureVal
 
@@ -877,7 +877,7 @@ Relationships:
 
 Evidence:
 - Code: `thirdparty/graphite/src/inc/FeatureVal.h` — graphite2::FeatureVal and gr_feature_val
-- Code: `thirdparty/graphite/src/gr_features.cpp` — gr_fref_set_feature_value
+- Code: `thirdparty/graphite/src/gr_features.cpp:23` — gr_fref_set_feature_value
 - Code: `thirdparty/graphite/src/gr_segment.cpp` — segment feature-value handling
 
 ## Font
@@ -899,7 +899,7 @@ Relationships:
 - Font → **Face** (many-to-one): Each Font references exactly one Face, while a Face can support many Font instances.
 
 Evidence:
-- Code: `thirdparty/graphite/src/inc/Font.h` — graphite2::Font
+- Code: `thirdparty/graphite/src/inc/Font.h:67` — graphite2::Font
 - Code: `thirdparty/graphite/src/Font.cpp` — Font::Font and Font::~Font
 
 ## GDExtension
@@ -917,7 +917,7 @@ Lifecycle: Loaded as a resource, initialized through its loader, registers exten
 | `gdextension` | `ObjectGDExtension` | Underlying native extension integration record. |
 
 Evidence:
-- Code: `core/extension/gdextension.h` — GDExtension
+- Code: `core/extension/gdextension.h:39` — GDExtension
 - Code: `core/object/class_db.h` — ClassDB::register_extension_class
 
 ## GDExtensionManifest
@@ -936,7 +936,7 @@ Lifecycle: Read as .gdextension configuration when the compatibility runner laun
 
 Evidence:
 - Code: `tests/compatibility_test/godot/compatibility_test.gdextension` — configuration and libraries sections
-- Code: `tests/compatibility_test/run_compatibility_test.py` — compatibility_check
+- Code: `tests/compatibility_test/run_compatibility_test.py:126` — compatibility_check
 
 ## GDScriptFunction
 
@@ -954,7 +954,7 @@ Lifecycle: Created by bytecode generation, attached to a compiled script, execut
 
 Evidence:
 - Code: `modules/gdscript/gdscript_function.h` — GDScriptFunction execution pointer fields
-- Code: `modules/gdscript/gdscript_byte_codegen.cpp` — function = memnew(GDScriptFunction)
+- Code: `modules/gdscript/gdscript_byte_codegen.cpp:161` — function = memnew(GDScriptFunction)
 
 ## GDScriptInstance
 
@@ -972,7 +972,7 @@ Relationships:
 - GDScriptInstance → **GDScriptFunction** (many-to-many): Instances invoke functions defined by their associated scripts.
 
 Evidence:
-- Code: `modules/gdscript/gdscript.h` — GDScriptInstance : public ScriptInstance
+- Code: `modules/gdscript/gdscript.h:337` — GDScriptInstance : public ScriptInstance
 - Code: `modules/gdscript/gdscript.cpp` — GDScriptInstance method dispatch and script.ptr access
 
 ## GDScriptTokenizer::Token
@@ -990,7 +990,7 @@ Lifecycle: Produced from source text, consumed by parsing and parser extensions,
 
 Evidence:
 - Code: `modules/gdscript/gdscript_tokenizer.h` — GDScriptTokenizer::Token
-- Code: `modules/gdscript/language_server/gdscript_extend_parser.cpp` — token.literal
+- Code: `modules/gdscript/language_server/gdscript_extend_parser.cpp:130` — token.literal
 
 ## GDScriptWorkspace
 
@@ -1004,7 +1004,7 @@ Relationships:
 - GDScriptWorkspace → **LSP::DocumentSymbol** (one-to-many): One workspace resolves and serves many document symbols.
 
 Evidence:
-- Code: `modules/gdscript/language_server/gdscript_workspace.h` — GDScriptWorkspace : public RefCounted
+- Code: `modules/gdscript/language_server/gdscript_workspace.h:39` — GDScriptWorkspace : public RefCounted
 - Code: `modules/gdscript/language_server/gdscript_workspace.cpp` — get_native_symbol, get_script_symbol, and resolve_symbol
 
 ## GDType
@@ -1025,9 +1025,9 @@ Relationships:
 - GDType → **MethodInfo** (one-to-many): GDType exposes signal metadata represented by MethodInfo values.
 
 Evidence:
-- Code: `core/object/gdtype.h` — GDType
+- Code: `core/object/gdtype.h:38` — GDType
 - Code: `core/object/gdtype.h` — GDType::get_signal_map
-- Code: `core/object/gdtype.cpp` — GDType::add_signal
+- Code: `core/object/gdtype.cpp:115` — GDType::add_signal
 
 ## GLES3::Texture
 
@@ -1043,7 +1043,7 @@ Lifecycle: Created and looked up through TextureStorage ownership paths; the ind
 
 Evidence:
 - Code: `drivers/gles3/storage/texture_storage.h` — struct Texture and Type type = TYPE_2D
-- Code: `drivers/gles3/storage/texture_storage.cpp` — texture_owner.get_or_null(p_texture)
+- Code: `drivers/gles3/storage/texture_storage.cpp:1022` — texture_owner.get_or_null(p_texture)
 
 ## GLTFBufferView
 
@@ -1060,7 +1060,7 @@ Lifecycle: A buffer view is retrieved from GLTFState during decoding and reads i
 | `byte_length` | `int64_t` | Length used to calculate the end of the view. |
 
 Evidence:
-- Code: `modules/gltf/structures/gltf_buffer_view.cpp` — GLTFBufferView::load_buffer_view_data
+- Code: `modules/gltf/structures/gltf_buffer_view.cpp:39` — GLTFBufferView::load_buffer_view_data
 - Code: `modules/gltf/gltf_state.h` — GLTFState::get_buffer_views
 
 ## GLTFMaterial
@@ -1078,7 +1078,7 @@ Lifecycle: Persisted in a GLTFAsset's materials array and loaded with the asset.
 | `pbrMetallicRoughness` | `JSON object` | The fixture uses baseColorFactor with metallicFactor or roughnessFactor. |
 
 Evidence:
-- Code: `tests/data/models/cube.gltf` — materials
+- Code: `tests/data/models/cube.gltf:66` — materials
 
 ## GLTFNode
 
@@ -1101,7 +1101,7 @@ Relationships:
 - GLTFNode → **GLTFSkin** (many-to-one): Many skinned nodes can reference one skin.
 
 Evidence:
-- Code: `modules/gltf/structures/gltf_node.h` — GLTFNode
+- Code: `modules/gltf/structures/gltf_node.h:37` — GLTFNode
 - Code: `modules/gltf/gltf_document.cpp` — node parent, children, mesh, skin, and skeleton handling
 
 ## GLTFSkin
@@ -1123,7 +1123,7 @@ Relationships:
 - GLTFSkin → **GLTFNode** (one-to-many): One skin references many joint nodes.
 
 Evidence:
-- Code: `modules/gltf/structures/gltf_skin.h` — GLTFSkin
+- Code: `modules/gltf/structures/gltf_skin.h:41` — GLTFSkin
 - Code: `modules/gltf/gltf_document.cpp` — skin joints and inverseBindMatrices parsing
 - Code: `modules/gltf/skin_tool.cpp` — GLTFSkin joints_original and inverse_binds processing
 
@@ -1141,8 +1141,8 @@ Lifecycle: The editor writes metadata for a messaging endpoint; clients read and
 | `EditorExecutablePath` | `string` | Path to the editor executable. |
 
 Evidence:
-- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/GodotIdeMetadata.cs` — GodotIdeMetadata
-- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/Client.cs` — ReadMetadataFile
+- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/GodotIdeMetadata.cs:5` — GodotIdeMetadata
+- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/Client.cs:167` — ReadMetadataFile
 
 ## GodotService.EngineStatus
 
@@ -1154,8 +1154,8 @@ Lifecycle: Produced or updated by `GodotService` and transported under the `KEY_
 
 Evidence:
 - Code: `platform/android/java/lib/src/main/java/org/godotengine/godot/service/GodotService.kt` — GodotService.EngineStatus
-- Code: `platform/android/java/lib/src/main/java/org/godotengine/godot/service/GodotService.kt` — KEY_ENGINE_STATUS
-- Code: `platform/android/java/lib/src/main/java/org/godotengine/godot/service/RemoteGodotFragment.kt` — GodotService.EngineStatus
+- Code: `platform/android/java/lib/src/main/java/org/godotengine/godot/service/GodotService.kt:79` — KEY_ENGINE_STATUS
+- Code: `platform/android/java/lib/src/main/java/org/godotengine/godot/service/RemoteGodotFragment.kt:54` — GodotService.EngineStatus
 
 ## GodotSoftBody3D
 
@@ -1172,7 +1172,7 @@ Lifecycle: The 3D server owns soft bodies by handle; active-soft-body lists feed
 | `Face` | `nested struct` | Triangle-like surface element that refers to nodes. |
 
 Evidence:
-- Code: `modules/godot_physics_3d/godot_soft_body_3d.h` — GodotSoftBody3D : public GodotCollisionObject3D
+- Code: `modules/godot_physics_3d/godot_soft_body_3d.h:46` — GodotSoftBody3D : public GodotCollisionObject3D
 - Code: `modules/godot_physics_3d/godot_space_3d.h` — GodotSpace3D::get_active_soft_body_list
 
 ## GraphicsPipelineCreateInfo
@@ -1192,7 +1192,7 @@ Lifecycle: A caller populates pointers to state records for a pipeline-creation 
 | `pNext` | `const void *` | Optional extension-chain pointer. |
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp` — struct GraphicsPipelineCreateInfo
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp:56895` — struct GraphicsPipelineCreateInfo
 
 ## Halfedge
 
@@ -1213,7 +1213,7 @@ Relationships:
 - Halfedge → **Halfedge** (one-to-one): Each directed halfedge stores the index of its paired adjacent halfedge.
 
 Evidence:
-- Code: `thirdparty/manifold/src/shared.h` — struct Halfedge
+- Code: `thirdparty/manifold/src/shared.h:119` — struct Halfedge
 - Code: `thirdparty/manifold/src/impl.cpp` — PrepHalfedges; pairedHalfedge construction
 - Code: `thirdparty/manifold/src/edge_op.cpp` — Halfedge topology edits
 
@@ -1233,7 +1233,7 @@ Lifecycle: Created by platform input, by API code, or by the engine; dispatched 
 | `pressed` | `bool` | Pressed state on applicable button and action subtypes. |
 
 Evidence:
-- Code: `doc/classes/InputEvent.xml` — InputEvent
+- Code: `doc/classes/InputEvent.xml:2` — InputEvent
 - Code: `doc/classes/InputEventFromWindow.xml` — InputEventFromWindow.window_id
 - Code: `doc/classes/InputEventMouseButton.xml` — InputEventMouseButton.pressed
 
@@ -1256,8 +1256,8 @@ Relationships:
 - InstanceCreateInfo → **ApplicationInfo** (zero-to-one): An instance configuration may reference one application-metadata record through `pApplicationInfo`.
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp` — struct InstanceCreateInfo
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp` — struct ApplicationInfo
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp:67360` — struct InstanceCreateInfo
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp:6883` — struct ApplicationInfo
 
 ## JPEG Decompression Context
 
@@ -1280,7 +1280,7 @@ Relationships:
 - JPEG Decompression Context → **JPEG Upsampler State** (one-to-one): A decompression context points to one selected upsampler module for an active decode.
 
 Evidence:
-- Code: `thirdparty/libjpeg-turbo/src/jpeglib.h` — jpeg_decompress_struct
+- Code: `thirdparty/libjpeg-turbo/src/jpeglib.h:328` — jpeg_decompress_struct
 
 ## JPEG Upsampler State
 
@@ -1302,7 +1302,7 @@ Relationships:
 - JPEG Upsampler State → **JPEG Decompression Context** (one-to-one): The selected JPEG decompression context owns and invokes this upsampler state.
 
 Evidence:
-- Code: `thirdparty/libjpeg-turbo/src/jdsample.h` — my_upsampler
+- Code: `thirdparty/libjpeg-turbo/src/jdsample.h:51` — my_upsampler
 
 ## JSON-RPC document
 
@@ -1323,7 +1323,7 @@ Relationships:
 
 Evidence:
 - Code: `doc/classes/JSONRPC.xml` — JSONRPC::make_notification
-- Code: `doc/classes/JSONRPC.xml` — JSONRPC
+- Code: `doc/classes/JSONRPC.xml:2` — JSONRPC
 
 ## JavaScriptObjectImpl
 
@@ -1338,7 +1338,7 @@ Lifecycle: Created through JavaScriptBridge object or interface operations, used
 | `_js_id` | `int` | Identifier used by JavaScript wrapper calls to locate the proxied object. |
 
 Evidence:
-- Code: `platform/web/javascript_bridge_singleton.cpp` — JavaScriptObjectImpl
+- Code: `platform/web/javascript_bridge_singleton.cpp:70` — JavaScriptObjectImpl
 
 ## JoltSpace3D
 
@@ -1355,7 +1355,7 @@ Lifecycle: JoltPhysicsServer3D retrieves spaces from its owner storage; JoltSpac
 
 Evidence:
 - Code: `modules/jolt_physics/spaces/jolt_space_3d.cpp` — JoltSpace3D physics_system update and get_debug_contacts
-- Code: `modules/jolt_physics/spaces/jolt_space_3d.h` — JoltSpace3D
+- Code: `modules/jolt_physics/spaces/jolt_space_3d.h:61` — JoltSpace3D
 
 ## KTX2 Private Texture State
 
@@ -1374,7 +1374,7 @@ Lifecycle: Allocated with a KTX2 texture, populated while reading or creating it
 | `_levelIndex` | `ktxLevelIndexEntry[1]` | Growable level index whose offsets are relative to image-data start. |
 
 Evidence:
-- Code: `thirdparty/libktx/lib/texture2.h` — ktxTexture2_private
+- Code: `thirdparty/libktx/lib/texture2.h:33` — ktxTexture2_private
 
 ## KTX2 Texture
 
@@ -1395,8 +1395,8 @@ Relationships:
 - KTX2 Texture → **KTX2 Private Texture State** (one-to-one): A KTX2 texture has one private KTX2 state block that records supercompression and level-index data.
 
 Evidence:
-- Code: `thirdparty/libktx/include/ktx.h` — ktxTexture
-- Code: `thirdparty/libktx/lib/texture2.c` — ktxTexture2_vtbl
+- Code: `thirdparty/libktx/include/ktx.h:280` — ktxTexture
+- Code: `thirdparty/libktx/lib/texture2.c:46` — ktxTexture2_vtbl
 
 ## KinematicCollision2D
 
@@ -1414,7 +1414,7 @@ Lifecycle: Produced when movement detects a collision, inspected by caller code,
 | `remainder` | `Vector2` | Motion remaining after the collision. |
 
 Evidence:
-- Code: `doc/classes/KinematicCollision2D.xml` — KinematicCollision2D
+- Code: `doc/classes/KinematicCollision2D.xml:2` — KinematicCollision2D
 
 ## Ktx2Header
 
@@ -1437,7 +1437,7 @@ Relationships:
 - Ktx2Header → **Ktx2LevelIndex** (one-to-many): One header declares the count for the per-level index array.
 
 Evidence:
-- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.h` — ktx2_header
+- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.h:721` — ktx2_header
 - Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.h` — ktx2_transcoder::init
 
 ## Ktx2LevelIndex
@@ -1458,7 +1458,7 @@ Relationships:
 - Ktx2LevelIndex → **Ktx2Header** (many-to-one): Each record indexes one level declared by a KTX2 header.
 
 Evidence:
-- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.h` — ktx2_level_index
+- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.h:741` — ktx2_level_index
 - Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.h` — ktx2_transcoder::get_level_index
 
 ## Ktx2TranscoderState
@@ -1476,7 +1476,7 @@ Lifecycle: Created by the caller for transcoding work, reset by clear, and reuse
 | `m_uncomp_data_level_index` | `int` | Index identifying the cached uncompressed level. |
 
 Evidence:
-- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.h` — ktx2_transcoder_state
+- Code: `thirdparty/basis_universal/transcoder/basisu_transcoder.h:931` — ktx2_transcoder_state
 
 ## LSP::DocumentSymbol
 
@@ -1495,7 +1495,7 @@ Relationships:
 - LSP::DocumentSymbol → **LSP::DocumentSymbol** (one-to-many): One parent symbol can contain many child symbols.
 
 Evidence:
-- Code: `modules/gdscript/language_server/godot_lsp.h` — DocumentSymbol
+- Code: `modules/gdscript/language_server/godot_lsp.h:218` — DocumentSymbol
 - Code: `modules/gdscript/language_server/gdscript_extend_parser.cpp` — DocumentSymbol children traversal
 
 ## LSP::TextDocumentItem
@@ -1510,8 +1510,8 @@ Relationships:
 - LSP::TextDocumentItem → **LSP::DocumentSymbol** (one-to-many): One parsed text document can provide many symbols through its symbol tree.
 
 Evidence:
-- Code: `modules/gdscript/language_server/godot_lsp.h` — TextDocumentItem
-- Code: `modules/gdscript/language_server/gdscript_language_protocol.cpp` — managed_files
+- Code: `modules/gdscript/language_server/godot_lsp.h:660` — TextDocumentItem
+- Code: `modules/gdscript/language_server/gdscript_language_protocol.cpp:393` — managed_files
 
 ## LSR
 
@@ -1531,7 +1531,7 @@ Relationships:
 - LSR → **LocaleMatcher** (one-to-many): LocaleMatcher stores pointers to supported LSR values.
 
 Evidence:
-- Code: `thirdparty/icu4c/common/lsr.h` — LSR
+- Code: `thirdparty/icu4c/common/lsr.h:17` — LSR
 - Code: `thirdparty/icu4c/common/unicode/localematcher.h` — LocaleMatcher::supportedLSRs
 
 ## LauncherIcon
@@ -1547,7 +1547,7 @@ Lifecycle: Created for export processing; the supplied index only exposes its `e
 | `export_path` | `const char *` | Path field of the launcher-icon export entry. |
 
 Evidence:
-- Code: `platform/android/export/export_plugin.h` — LauncherIcon
+- Code: `platform/android/export/export_plugin.h:57` — LauncherIcon
 
 ## Locale
 
@@ -1562,8 +1562,8 @@ Relationships:
 - Locale → **LSR** (one-to-one): Locale matching derives an LSR representation for a locale.
 
 Evidence:
-- Code: `thirdparty/icu4c/common/unicode/locid.h` — Locale
-- Code: `thirdparty/icu4c/common/localematcher.cpp` — LocaleMatcher::getBestMatch
+- Code: `thirdparty/icu4c/common/unicode/locid.h:51` — Locale
+- Code: `thirdparty/icu4c/common/localematcher.cpp:608` — LocaleMatcher::getBestMatch
 
 ## LocaleMatcher
 
@@ -1584,7 +1584,7 @@ Relationships:
 - LocaleMatcher → **LSR** (one-to-many): One matcher stores multiple supported LSR candidates.
 
 Evidence:
-- Code: `thirdparty/icu4c/common/unicode/localematcher.h` — LocaleMatcher
+- Code: `thirdparty/icu4c/common/unicode/localematcher.h:28` — LocaleMatcher
 
 ## MainFrameTime
 
@@ -1595,8 +1595,8 @@ Role: carries per-frame timing results
 Lifecycle: Constructed or populated during timer advancement and replaced on a later frame; the supplied index does not expose its member layout or destruction behavior.
 
 Evidence:
-- Code: `main/main_timer_sync.h` — MainFrameTime
-- Code: `main/main_timer_sync.cpp` — MainTimerSync::advance
+- Code: `main/main_timer_sync.h:35` — MainFrameTime
+- Code: `main/main_timer_sync.cpp:539` — MainTimerSync::advance
 
 ## ManagedCallbacks
 
@@ -1616,7 +1616,7 @@ Relationships:
 - ManagedCallbacks → **Variant** (one-to-many): One callback table defines many callbacks that receive or return native Variant values.
 
 Evidence:
-- Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/ManagedCallbacks.cs` — ManagedCallbacks
+- Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/ManagedCallbacks.cs:8` — ManagedCallbacks
 - Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/NativeInterop/NativeFuncs.cs` — NativeFuncs.Initialize
 
 ## Material
@@ -1633,7 +1633,7 @@ Lifecycle: Created, imported, or loaded; assigned to one or more mesh surfaces o
 | `next_pass` | `Material` | Optional material used in a following rendering pass. |
 
 Evidence:
-- Code: `doc/classes/Material.xml` — Material
+- Code: `doc/classes/Material.xml:2` — Material
 
 ## MeshGLP
 
@@ -1656,7 +1656,7 @@ Relationships:
 - MeshGLP → **Halfedge** (one-to-many): Internal construction converts a mesh's triangle connectivity into many directed halfedges.
 
 Evidence:
-- Code: `thirdparty/manifold/include/manifold/manifold.h` — struct MeshGLP
+- Code: `thirdparty/manifold/include/manifold/manifold.h:113` — struct MeshGLP
 - Code: `thirdparty/manifold/src/constructors.cpp` — Manifold constructors accepting MeshGLP
 - Code: `thirdparty/manifold/src/impl.h` — MeshGLP field access in Manifold::Impl construction
 
@@ -1678,8 +1678,8 @@ Relationships:
 - Message → **MessageContent** (one-to-one): Every Message contains exactly one MessageContent value.
 
 Evidence:
-- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/Message.cs` — Message
-- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/MessageDecoder.cs` — MessageDecoder
+- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/Message.cs:3` — Message
+- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/MessageDecoder.cs:6` — MessageDecoder
 
 ## MessageContent
 
@@ -1695,7 +1695,7 @@ Lifecycle: Constructed with a status and body, carried by a Message through tran
 | `Body` | `string` | Serialized or textual request and response body. |
 
 Evidence:
-- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/Message.cs` — MessageContent
+- Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/Message.cs:7` — MessageContent
 - Code: `modules/mono/editor/GodotTools/GodotTools.IdeMessaging/ResponseAwaiter.cs` — ResponseAwaiter<T>.SetResult
 
 ## MethodInfo
@@ -1717,7 +1717,7 @@ Relationships:
 - MethodInfo → **PropertyInfo** (one-to-many): A MethodInfo carries return and argument PropertyInfo descriptions.
 
 Evidence:
-- Code: `core/object/method_info.h` — MethodInfo
+- Code: `core/object/method_info.h:48` — MethodInfo
 - Code: `core/object/method_info.cpp` — MethodInfo::operator==
 - Code: `core/object/class_db.cpp` — ClassDB::bind_method
 
@@ -1738,7 +1738,7 @@ Lifecycle: Associated with a movable body, configured from mass properties and a
 | `mAngularVelocity` | `Vec3` | Current angular velocity, including kinematic movement targets. |
 
 Evidence:
-- Code: `thirdparty/jolt_physics/Jolt/Physics/Body/MotionProperties.cpp` — MotionProperties::SetMassProperties
+- Code: `thirdparty/jolt_physics/Jolt/Physics/Body/MotionProperties.cpp:12` — MotionProperties::SetMassProperties
 - Code: `thirdparty/jolt_physics/Jolt/Physics/Body/MotionProperties.inl` — MotionProperties::MoveKinematic, ClampLinearVelocity, ClampAngularVelocity
 
 ## NavigationPathQueryParameters2D
@@ -1757,7 +1757,7 @@ Lifecycle: Created, configured, submitted to NavigationServer2D, optionally reus
 | `excluded_regions` | `RID[]` | Region identifiers excluded from the query. |
 
 Evidence:
-- Code: `doc/classes/NavigationPathQueryParameters2D.xml` — NavigationPathQueryParameters2D
+- Code: `doc/classes/NavigationPathQueryParameters2D.xml:2` — NavigationPathQueryParameters2D
 
 ## NodePath
 
@@ -1777,9 +1777,9 @@ Relationships:
 - NodePath → **StringName** (one-to-many): A NodePath stores multiple interned name segments.
 
 Evidence:
-- Code: `core/string/node_path.h` — NodePath
+- Code: `core/string/node_path.h:39` — NodePath
 - Code: `core/string/node_path.h` — NodePath::Data
-- Code: `core/string/node_path.cpp` — NodePath::slice
+- Code: `core/string/node_path.cpp:264` — NodePath::slice
 
 ## Object
 
@@ -1800,9 +1800,9 @@ Relationships:
 - Object → **GDType** (one-to-one): Each Object obtains one runtime GDType view for its class.
 
 Evidence:
-- Code: `core/object/object.h` — Object
+- Code: `core/object/object.h:132` — Object
 - Code: `core/object/object.h` — Object::SignalData
-- Code: `core/object/object.cpp` — Object::get_gdtype
+- Code: `core/object/object.cpp:2103` — Object::get_gdtype
 
 ## ObjectID
 
@@ -1820,8 +1820,8 @@ Relationships:
 - ObjectID → **Object** (one-to-one): An ObjectID identifies one Object instance while that instance is registered.
 
 Evidence:
-- Code: `core/object/object_id.h` — ObjectID
-- Code: `core/object/object.h` — ObjectDB
+- Code: `core/object/object_id.h:41` — ObjectID
+- Code: `core/object/object.h:874` — ObjectDB
 
 ## Ogg Packet
 
@@ -1841,7 +1841,7 @@ Lifecycle: Produced from a codec or page stream, consumed by a codec or stream o
 | `packetno` | `ogg_int64_t` | Packet sequence counter. |
 
 Evidence:
-- Code: `thirdparty/libogg/ogg/ogg.h` — ogg_packet
+- Code: `thirdparty/libogg/ogg/ogg.h:86` — ogg_packet
 
 ## Ogg Stream State
 
@@ -1863,7 +1863,7 @@ Relationships:
 - Ogg Stream State → **Ogg Packet** (one-to-many): One logical stream state accepts or produces a sequence of packets.
 
 Evidence:
-- Code: `thirdparty/libogg/ogg/ogg.h` — ogg_stream_state
+- Code: `thirdparty/libogg/ogg/ogg.h:49` — ogg_stream_state
 
 ## OggPacketSequence
 
@@ -1880,7 +1880,7 @@ Lifecycle: Constructed or loaded as a Resource, passed to playback support, and 
 | `sampling_rate` | `float` | Sample-rate information for the sequence. |
 
 Evidence:
-- Code: `modules/ogg/ogg_packet_sequence.h` — OggPacketSequence
+- Code: `modules/ogg/ogg_packet_sequence.h:41` — OggPacketSequence
 - External (official, unverified (source anchor not found)): [OggPacketSequence — Godot Engine](https://docs.godotengine.org/en/latest/classes/class_oggpacketsequence.html), accessed 2026-07-15
 
 ## OpenXRActionMap
@@ -1892,8 +1892,8 @@ Role: XR input configuration
 Lifecycle: Authored or loaded as a Resource, consumed by OpenXR action-map code to organize action-related resources, and released with the resource graph.
 
 Evidence:
-- Code: `modules/openxr/action_map/openxr_action_map.h` — OpenXRActionMap
-- Code: `modules/openxr/action_map/openxr_action_map.cpp` — OpenXRActionMap
+- Code: `modules/openxr/action_map/openxr_action_map.h:39` — OpenXRActionMap
+- Code: `modules/openxr/action_map/openxr_action_map.cpp:37` — OpenXRActionMap
 
 ## OpenXRFutureResult
 
@@ -1909,7 +1909,7 @@ Lifecycle: An extension creates or registers a future, returns this result objec
 | `result_value` | `Variant` | Extension-provided asynchronous result exposed by get_result_value. |
 
 Evidence:
-- Code: `modules/openxr/extensions/openxr_future_extension.h` — class OpenXRFutureResult : public RefCounted
+- Code: `modules/openxr/extensions/openxr_future_extension.h:57` — class OpenXRFutureResult : public RefCounted
 - Code: `modules/openxr/doc_classes/OpenXRFutureResult.xml` — OpenXRFutureResult::get_future and get_result_value
 
 ## OpenXRSpatialQueryResultData
@@ -1926,7 +1926,7 @@ Lifecycle: It is supplied as the first requested component for a snapshot query,
 | `entity_state` | `int` | Tracking state returned for an indexed result. |
 
 Evidence:
-- Code: `modules/openxr/extensions/spatial_entities/openxr_spatial_entities.h` — class OpenXRSpatialQueryResultData : public OpenXRSpatialComponentData
+- Code: `modules/openxr/extensions/spatial_entities/openxr_spatial_entities.h:221` — class OpenXRSpatialQueryResultData : public OpenXRSpatialComponentData
 - Code: `modules/openxr/doc_classes/OpenXRSpatialQueryResultData.xml` — OpenXRSpatialQueryResultData::get_entity_id and get_entity_state
 
 ## OpenXRStructureBase
@@ -1945,7 +1945,7 @@ Relationships:
 - OpenXRStructureBase → **OpenXRStructureBase** (one-to-one): Each structure can point to one next structure, forming a linked chain.
 
 Evidence:
-- Code: `modules/openxr/openxr_structure.h` — class OpenXRStructureBase : public RefCounted
+- Code: `modules/openxr/openxr_structure.h:39` — class OpenXRStructureBase : public RefCounted
 - Code: `modules/openxr/doc_classes/OpenXRStructureBase.xml` — OpenXRStructureBase.next
 
 ## PFR_FaceRec
@@ -1964,8 +1964,8 @@ Lifecycle: Face initialization loads PFR state into the record; the PFR driver s
 | `phy_font` | `PFR_PhyFontRec` | Parsed physical-font data. |
 
 Evidence:
-- Code: `thirdparty/freetype/src/pfr/pfrobjs.h` — PFR_FaceRec_
-- Code: `thirdparty/freetype/src/pfr/pfrobjs.h` — pfr_face_init
+- Code: `thirdparty/freetype/src/pfr/pfrobjs.h:27` — PFR_FaceRec_
+- Code: `thirdparty/freetype/src/pfr/pfrobjs.h:60` — pfr_face_init
 
 ## PNG Information State
 
@@ -1983,9 +1983,9 @@ Lifecycle: Created with PNG processing state, populated from file chunks or appl
 | `rowbytes` | `png_size_t` | Computed byte count for an image row. |
 
 Evidence:
-- Code: `thirdparty/libpng/pnginfo.h` — png_info_def
-- Code: `thirdparty/libpng/pngget.c` — png_get_valid
-- Code: `thirdparty/libpng/pngget.c` — png_get_rowbytes
+- Code: `thirdparty/libpng/pnginfo.h:31` — png_info_def
+- Code: `thirdparty/libpng/pngget.c:19` — png_get_valid
+- Code: `thirdparty/libpng/pngget.c:40` — png_get_rowbytes
 
 ## PackedData::PackedFile
 
@@ -2006,7 +2006,7 @@ Lifecycle: Created when a pack source adds a path, retained in PackedData indexe
 | `delta` | `bool` | Whether the file represents delta data. |
 
 Evidence:
-- Code: `core/io/file_access_pack.h` — PackedData::PackedFile
+- Code: `core/io/file_access_pack.h:164` — PackedData::PackedFile
 
 ## PackedScene
 
@@ -2024,7 +2024,7 @@ Relationships:
 - PackedScene → **SceneState** (one-to-one): A PackedScene holds one backing SceneState reference.
 
 Evidence:
-- Code: `scene/resources/packed_scene.h` — class PackedScene : public Resource
+- Code: `scene/resources/packed_scene.h:248` — class PackedScene : public Resource
 - Code: `scene/resources/packed_scene.cpp` — PackedScene scene-state access
 
 ## PhysicsMaterialSimple
@@ -2045,7 +2045,7 @@ Relationships:
 
 Evidence:
 - Code: `thirdparty/jolt_physics/Jolt/Physics/Collision/PhysicsMaterialSimple.cpp` — PhysicsMaterialSimple RTTI registration, SaveBinaryState, RestoreBinaryState
-- Code: `thirdparty/jolt_physics/Jolt/Physics/Collision/PhysicsMaterialSimple.h` — PhysicsMaterialSimple
+- Code: `thirdparty/jolt_physics/Jolt/Physics/Collision/PhysicsMaterialSimple.h:12` — PhysicsMaterialSimple
 
 ## PhysicsShapeQueryParameters2D
 
@@ -2066,7 +2066,7 @@ Relationships:
 - PhysicsShapeQueryParameters2D → **RID** (many-to-many): The exclusion list holds RID values for low-level objects.
 
 Evidence:
-- Code: `doc/classes/PhysicsShapeQueryParameters2D.xml` — PhysicsShapeQueryParameters2D
+- Code: `doc/classes/PhysicsShapeQueryParameters2D.xml:2` — PhysicsShapeQueryParameters2D
 - Code: `doc/classes/PhysicsDirectSpaceState2D.xml` — PhysicsDirectSpaceState2D.cast_motion
 
 ## PhysicsTestMotionResult2D
@@ -2081,7 +2081,7 @@ Relationships:
 - PhysicsTestMotionResult2D → **RID** (many-to-one): A collision result can expose the colliding body's RID.
 
 Evidence:
-- Code: `doc/classes/PhysicsTestMotionResult2D.xml` — PhysicsTestMotionResult2D
+- Code: `doc/classes/PhysicsTestMotionResult2D.xml:2` — PhysicsTestMotionResult2D
 
 ## PluginConfigAndroid
 
@@ -2092,8 +2092,8 @@ Role: carries Android plugin configuration
 Lifecycle: Its construction, serialization, and retirement behavior are not exposed by the supplied index.
 
 Evidence:
-- Code: `platform/android/export/godot_plugin_config.h` — PluginConfigAndroid
-- Code: `platform/android/export/godot_plugin_config.cpp` — PluginConfigAndroid
+- Code: `platform/android/export/godot_plugin_config.h:53` — PluginConfigAndroid
+- Code: `platform/android/export/godot_plugin_config.cpp:41` — PluginConfigAndroid
 
 ## PolyPathD
 
@@ -2113,7 +2113,7 @@ Relationships:
 - PolyPathD → **PolyPathD** (one-to-many): A node owns zero or more child polygon-tree nodes.
 
 Evidence:
-- Code: `thirdparty/clipper2/include/clipper2/clipper.engine.h` — PolyPathD
+- Code: `thirdparty/clipper2/include/clipper2/clipper.engine.h:70` — PolyPathD
 - Code: `thirdparty/clipper2/include/clipper2/clipper.engine.h` — PolyPathD::AddChild
 
 ## PortMapping
@@ -2132,8 +2132,8 @@ Relationships:
 - PortMapping → **PortMapping** (one-to-many): A parser result can contain many mappings joined by `l_next`.
 
 Evidence:
-- Code: `thirdparty/miniupnpc/include/miniupnpc/portlistingparse.h` — struct PortMapping
-- Code: `thirdparty/miniupnpc/src/portlistingparse.c` — ParsePortListing
+- Code: `thirdparty/miniupnpc/include/miniupnpc/portlistingparse.h:48` — struct PortMapping
+- Code: `thirdparty/miniupnpc/src/portlistingparse.c:149` — ParsePortListing
 
 ## PresentInfoKHR
 
@@ -2154,7 +2154,7 @@ Relationships:
 - PresentInfoKHR → **SwapchainKHR** (one-to-many): A presentation request contains an array of target swapchain handles.
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp` — struct PresentInfoKHR
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp:135085` — struct PresentInfoKHR
 
 ## PrimRef
 
@@ -2174,7 +2174,7 @@ Relationships:
 - PrimRef → **BVHN** (many-to-one): Many primitive references are partitioned into one hierarchy during a BVH build.
 
 Evidence:
-- Code: `thirdparty/embree/kernels/builders/primref.h` — PrimRef
+- Code: `thirdparty/embree/kernels/builders/primref.h:11` — PrimRef
 - Code: `thirdparty/embree/kernels/builders/primrefgen.cpp` — PrimRef construction
 
 ## ProjectCatalog
@@ -2193,7 +2193,7 @@ Lifecycle: Created with ProjectList; project scanning populates records, UI acti
 | `_selected_project_paths` | `HashSet<String>` | Keys for the current selected projects. |
 
 Evidence:
-- Code: `editor/project_manager/project_list.h` — ProjectList
+- Code: `editor/project_manager/project_list.h:42` — ProjectList
 
 ## ProjectSettings
 
@@ -2212,7 +2212,7 @@ Lifecycle: Constructed as the settings singleton, populated by setup or load ope
 | `_version` | `uint32_t` | Change-tracking version used by cached setting access. |
 
 Evidence:
-- Code: `core/config/project_settings.h` — ProjectSettings
+- Code: `core/config/project_settings.h:40` — ProjectSettings
 
 ## PropertyInfo
 
@@ -2233,9 +2233,9 @@ Relationships:
 - PropertyInfo → **Variant** (one-to-many): PropertyInfo describes Variant-facing values and can be paired with Variant defaults.
 
 Evidence:
-- Code: `core/object/property_info.h` — PropertyInfo
+- Code: `core/object/property_info.h:124` — PropertyInfo
 - Code: `core/object/property_info.cpp` — PropertyInfo::operator==
-- Code: `core/object/class_db.cpp` — ClassDB::get_property
+- Code: `core/object/class_db.cpp:1618` — ClassDB::get_property
 
 ## RDAccelerationStructureGeometry
 
@@ -2256,7 +2256,7 @@ Relationships:
 - RDAccelerationStructureGeometry → **RID** (one-to-many): The geometry descriptor references vertex and optional index buffer IDs.
 
 Evidence:
-- Code: `doc/classes/RDAccelerationStructureGeometry.xml` — RDAccelerationStructureGeometry
+- Code: `doc/classes/RDAccelerationStructureGeometry.xml:2` — RDAccelerationStructureGeometry
 
 ## RDPipelineSpecializationConstant
 
@@ -2272,7 +2272,7 @@ Lifecycle: Created with a constant identifier and value, attached to an RDPipeli
 | `value` | `Variant` | Value applied to the specialization constant. |
 
 Evidence:
-- Code: `doc/classes/RDPipelineSpecializationConstant.xml` — RDPipelineSpecializationConstant
+- Code: `doc/classes/RDPipelineSpecializationConstant.xml:2` — RDPipelineSpecializationConstant
 - Code: `doc/classes/RDPipelineShader.xml` — RDPipelineShader.specialization_constants
 
 ## RDTextureFormat
@@ -2291,7 +2291,7 @@ Lifecycle: Constructed and populated before texture creation, consumed by Render
 | `usage_bits` | `int` | Allowed texture operations. |
 
 Evidence:
-- Code: `doc/classes/RDTextureFormat.xml` — RDTextureFormat
+- Code: `doc/classes/RDTextureFormat.xml:2` — RDTextureFormat
 - Code: `doc/classes/RDTextureView.xml` — RDTextureView.format_override
 
 ## RDUniform
@@ -2312,7 +2312,7 @@ Relationships:
 - RDUniform → **RID** (one-to-many): Each uniform can bind multiple low-level resource IDs.
 
 Evidence:
-- Code: `doc/classes/RDUniform.xml` — RDUniform
+- Code: `doc/classes/RDUniform.xml:2` — RDUniform
 
 ## RID
 
@@ -2326,7 +2326,7 @@ Relationships:
 - RID → **RDUniform** (one-to-many): An RDUniform can bind an ordered collection of RID values.
 
 Evidence:
-- Code: `doc/classes/RID.xml` — RID
+- Code: `doc/classes/RID.xml:2` — RID
 - Code: `doc/classes/RDUniform.xml` — RDUniform.add_id
 
 ## RTCBuffer
@@ -2338,9 +2338,9 @@ Role: Supplies byte-addressed data storage for geometry buffer slots.
 Lifecycle: Created with a buffer API call, bound or shared with geometry, and retired through the buffer release API.
 
 Evidence:
-- Code: `thirdparty/embree/include/embree4/rtcore_buffer.h` — RTCBuffer
-- Code: `thirdparty/embree/include/embree4/rtcore_buffer.h` — rtcNewBuffer
-- Code: `thirdparty/embree/include/embree4/rtcore_buffer.h` — rtcNewSharedBuffer
+- Code: `thirdparty/embree/include/embree4/rtcore_buffer.h:36` — RTCBuffer
+- Code: `thirdparty/embree/include/embree4/rtcore_buffer.h:39` — rtcNewBuffer
+- Code: `thirdparty/embree/include/embree4/rtcore_buffer.h:45` — rtcNewSharedBuffer
 
 ## RTCDevice
 
@@ -2355,8 +2355,8 @@ Relationships:
 - RTCDevice → **RTCBuffer** (one-to-many): One device can create multiple buffer handles.
 
 Evidence:
-- Code: `thirdparty/embree/include/embree4/rtcore_device.h` — RTCDevice
-- Code: `thirdparty/embree/include/embree4/rtcore_device.h` — rtcNewDevice
+- Code: `thirdparty/embree/include/embree4/rtcore_device.h:11` — RTCDevice
+- Code: `thirdparty/embree/include/embree4/rtcore_device.h:15` — rtcNewDevice
 
 ## RTCGeometry
 
@@ -2370,8 +2370,8 @@ Relationships:
 - RTCGeometry → **RTCBuffer** (one-to-many): One geometry can bind multiple buffers in distinct buffer-type slots.
 
 Evidence:
-- Code: `thirdparty/embree/include/embree4/rtcore_geometry.h` — RTCGeometry
-- Code: `thirdparty/embree/include/embree4/rtcore_geometry.h` — rtcSetGeometryBuffer
+- Code: `thirdparty/embree/include/embree4/rtcore_geometry.h:15` — RTCGeometry
+- Code: `thirdparty/embree/include/embree4/rtcore_geometry.h:169` — rtcSetGeometryBuffer
 
 ## RTCHit
 
@@ -2393,7 +2393,7 @@ Lifecycle: Initialized by the caller as part of a ray-hit query and overwritten 
 | `instID` | `unsigned int[RTC_MAX_INSTANCE_LEVEL_COUNT]` | Instance identifier stack. |
 
 Evidence:
-- Code: `thirdparty/embree/include/embree4/rtcore_ray.h` — RTCHit
+- Code: `thirdparty/embree/include/embree4/rtcore_ray.h:30` — RTCHit
 
 ## RTCPointQuery
 
@@ -2412,8 +2412,8 @@ Lifecycle: Caller initializes the query, passes it through point-query APIs and 
 | `time` | `float` | Time used for geometry evaluation. |
 
 Evidence:
-- Code: `thirdparty/embree/include/embree4/rtcore_common.h` — RTCPointQuery
-- Code: `thirdparty/embree/kernels/common/point_query.h` — PointQueryK
+- Code: `thirdparty/embree/include/embree4/rtcore_common.h:364` — RTCPointQuery
+- Code: `thirdparty/embree/kernels/common/point_query.h:12` — PointQueryK
 
 ## RTCRay
 
@@ -2439,7 +2439,7 @@ Lifecycle: Initialized by the caller, read and partially updated during traversa
 | `flags` | `unsigned int` | Ray-query flags. |
 
 Evidence:
-- Code: `thirdparty/embree/include/embree4/rtcore_ray.h` — RTCRay
+- Code: `thirdparty/embree/include/embree4/rtcore_ray.h:11` — RTCRay
 
 ## RTCRayHit
 
@@ -2459,7 +2459,7 @@ Relationships:
 - RTCRayHit → **RTCHit** (one-to-one): Each ray-hit record embeds one hit result.
 
 Evidence:
-- Code: `thirdparty/embree/include/embree4/rtcore_ray.h` — RTCRayHit
+- Code: `thirdparty/embree/include/embree4/rtcore_ray.h:48` — RTCRayHit
 
 ## RTCScene
 
@@ -2473,8 +2473,8 @@ Relationships:
 - RTCScene → **RTCGeometry** (one-to-many): One scene can contain many attached geometry handles.
 
 Evidence:
-- Code: `thirdparty/embree/include/embree4/rtcore_device.h` — RTCScene
-- Code: `thirdparty/embree/include/embree4/rtcore_scene.h` — rtcCommitScene
+- Code: `thirdparty/embree/include/embree4/rtcore_device.h:12` — RTCScene
+- Code: `thirdparty/embree/include/embree4/rtcore_scene.h:118` — rtcCommitScene
 
 ## RVOSimulator2D
 
@@ -2485,7 +2485,7 @@ Role: coordinates 2D avoidance simulation
 Lifecycle: Constructed by the caller, accepts agents and obstacles, computes simulation steps, and is destroyed by the caller.
 
 Evidence:
-- Code: `thirdparty/rvo2/rvo2_2d/RVOSimulator2d.h` — RVO2D::RVOSimulator2D
+- Code: `thirdparty/rvo2/rvo2_2d/RVOSimulator2d.h:52` — RVO2D::RVOSimulator2D
 
 ## RenderDataRD
 
@@ -2504,7 +2504,7 @@ Lifecycle: Prepared for a scene-rendering operation, passed to RD rendering serv
 | `fog_volumes` | `const PagedArray<RID> *` | Points to fog-volume IDs. |
 
 Evidence:
-- Code: `servers/rendering/renderer_rd/storage_rd/render_data_rd.h` — RenderDataRD
+- Code: `servers/rendering/renderer_rd/storage_rd/render_data_rd.h:38` — RenderDataRD
 
 ## RenderSceneBuffersConfiguration
 
@@ -2521,7 +2521,7 @@ Lifecycle: Created and populated by the render engine on a viewport change, pass
 | `fsr_sharpness` | `float` | FSR sharpness when FSR upscaling is used. |
 
 Evidence:
-- Code: `doc/classes/RenderSceneBuffersConfiguration.xml` — RenderSceneBuffersConfiguration
+- Code: `doc/classes/RenderSceneBuffersConfiguration.xml:2` — RenderSceneBuffersConfiguration
 - Code: `doc/classes/RenderSceneBuffers.xml` — RenderSceneBuffers.configure
 
 ## RenderingDeviceDriverVulkan::BufferInfo
@@ -2533,7 +2533,7 @@ Role: Stores backend buffer state for Vulkan rendering operations.
 Lifecycle: Associated with a buffer driver ID, recovered from that ID during driver operations, and retired by the driver's resource-management path; the indexed excerpt does not establish exact destruction behavior.
 
 Evidence:
-- Code: `drivers/vulkan/rendering_device_driver_vulkan.h` — struct BufferInfo
+- Code: `drivers/vulkan/rendering_device_driver_vulkan.h:238` — struct BufferInfo
 - Code: `drivers/vulkan/rendering_device_driver_vulkan.cpp` — BufferInfo casts from p_buffer.id
 
 ## RenderingDeviceDriverVulkan::CommandBufferInfo
@@ -2545,7 +2545,7 @@ Role: Stores backend state used while recording or submitting Vulkan command buf
 Lifecycle: Associated with a command-buffer driver ID and recovered from that ID throughout driver operations; the indexed excerpt does not establish exact destruction behavior.
 
 Evidence:
-- Code: `drivers/vulkan/rendering_device_driver_vulkan.h` — struct CommandBufferInfo
+- Code: `drivers/vulkan/rendering_device_driver_vulkan.h:61` — struct CommandBufferInfo
 - Code: `drivers/vulkan/rendering_device_driver_vulkan.cpp` — CommandBufferInfo casts from p_cmd_buffer.id
 
 ## Resource
@@ -2566,8 +2566,8 @@ Relationships:
 - Resource → **SceneState** (many-to-many): A scene state catalogs resources associated with its packed scene.
 
 Evidence:
-- Code: `doc/classes/Resource.xml` — Resource
-- Code: `doc/classes/SceneState.xml` — SceneState
+- Code: `doc/classes/Resource.xml:2` — Resource
+- Code: `doc/classes/SceneState.xml:2` — SceneState
 
 ## SDL_Event
 
@@ -2583,8 +2583,8 @@ Lifecycle: Produced by SDL or the application, copied into or read from the even
 | `payload union` | `SDL_Event` | Alternative typed event payloads such as text, input, drop, and user events. |
 
 Evidence:
-- Code: `thirdparty/sdl/include/SDL3/SDL_events.h` — SDL_Event
-- Code: `thirdparty/sdl/events/SDL_events.c` — SDL_AddEvent
+- Code: `thirdparty/sdl/include/SDL3/SDL_events.h:983` — SDL_Event
+- Code: `thirdparty/sdl/events/SDL_events.c:981` — SDL_AddEvent
 
 ## SDL_EventEntry
 
@@ -2606,7 +2606,7 @@ Relationships:
 - SDL_EventEntry → **SDL_EventEntry** (one-to-one): Each entry can link to one previous and one next queue entry.
 
 Evidence:
-- Code: `thirdparty/sdl/events/SDL_events.c` — SDL_EventEntry
+- Code: `thirdparty/sdl/events/SDL_events.c:127` — SDL_EventEntry
 
 ## SDL_IOStream
 
@@ -2620,8 +2620,8 @@ Relationships:
 - SDL_IOStream → **SDL_PropertiesID** (one-to-one): Each stream can expose one property group through its I/O-properties API.
 
 Evidence:
-- Code: `thirdparty/sdl/include/SDL3/SDL_iostream.h` — SDL_IOStream
-- Code: `thirdparty/sdl/io/SDL_iostream.c` — SDL_GetIOProperties
+- Code: `thirdparty/sdl/include/SDL3/SDL_iostream.h:31` — SDL_IOStream
+- Code: `thirdparty/sdl/io/SDL_iostream.c:350` — SDL_GetIOProperties
 
 ## SDL_PropertiesID
 
@@ -2632,8 +2632,8 @@ Role: shares named runtime metadata and configuration between SDL services
 Lifecycle: Created by a properties API, populated or queried by services, and destroyed when the property group is no longer needed.
 
 Evidence:
-- Code: `thirdparty/sdl/include/SDL3/SDL_properties.h` — SDL_PropertiesID
-- Code: `thirdparty/sdl/SDL_properties.c` — SDL_GetStringProperty
+- Code: `thirdparty/sdl/include/SDL3/SDL_properties.h:28` — SDL_PropertiesID
+- Code: `thirdparty/sdl/SDL_properties.c:542` — SDL_GetStringProperty
 
 ## SDL_hid_device_info
 
@@ -2651,8 +2651,8 @@ Relationships:
 - SDL_hid_device_info → **SDL_hid_device_info** (one-to-one): Each record links to the next record in an enumeration result list.
 
 Evidence:
-- Code: `thirdparty/sdl/include/SDL3/SDL_hidapi.h` — SDL_hid_device_info
-- Code: `thirdparty/sdl/hidapi/SDL_hidapi.c` — SDL_hid_enumerate
+- Code: `thirdparty/sdl/include/SDL3/SDL_hidapi.h:112` — SDL_hid_device_info
+- Code: `thirdparty/sdl/hidapi/SDL_hidapi.c:1410` — SDL_hid_enumerate
 
 ## SVG_RendererRec
 
@@ -2671,7 +2671,7 @@ Lifecycle: The record exists for its renderer-module lifetime; hooks and state r
 | `state` | `FT_Pointer` | Hook-owned renderer state. |
 
 Evidence:
-- Code: `thirdparty/freetype/src/svg/svgtypes.h` — SVG_RendererRec_
+- Code: `thirdparty/freetype/src/svg/svgtypes.h:27` — SVG_RendererRec_
 
 ## Scene Fixture
 
@@ -2689,7 +2689,7 @@ Lifecycle: Loaded when a completion configuration requests it and retained as sh
 
 Evidence:
 - Code: `modules/gdscript/tests/scripts/completion/get_node/get_node.tscn` — UniqueAnimationPlayer and UniqueA nodes
-- Code: `modules/gdscript/tests/scripts/completion/argument_options/argument_options.tscn` — AnimationLibrary_gs7mj
+- Code: `modules/gdscript/tests/scripts/completion/argument_options/argument_options.tscn:6` — AnimationLibrary_gs7mj
 
 ## SceneReplicationConfig
 
@@ -2707,8 +2707,8 @@ Lifecycle: Created or edited as a Resource, saved with its replication propertie
 | `watch_props` | `List<NodePath>` | Derived property paths watched for changes. |
 
 Evidence:
-- Code: `modules/multiplayer/scene_replication_config.h` — SceneReplicationConfig
-- Code: `modules/multiplayer/scene_replication_config.cpp` — SceneReplicationConfig::get_sync_properties
+- Code: `modules/multiplayer/scene_replication_config.h:36` — SceneReplicationConfig
+- Code: `modules/multiplayer/scene_replication_config.cpp:259` — SceneReplicationConfig::get_sync_properties
 
 ## SceneState
 
@@ -2730,8 +2730,8 @@ Relationships:
 - SceneState → **PackedScene** (one-to-one): A PackedScene retains one SceneState reference.
 
 Evidence:
-- Code: `scene/resources/packed_scene.h` — SceneState
-- Code: `scene/resources/packed_scene.h` — SceneState::NodeData
+- Code: `scene/resources/packed_scene.h:38` — SceneState
+- Code: `scene/resources/packed_scene.h:167` — SceneState::NodeData
 - Code: `scene/resources/packed_scene.h` — SceneState::ConnectionData
 
 ## ScriptPathAttribute
@@ -2747,8 +2747,8 @@ Lifecycle: Generated during C# compilation, stored as type metadata in the resul
 | `Path` | `string` | The script file path carried by the attribute. |
 
 Evidence:
-- Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/Attributes/ScriptPathAttribute.cs` — ScriptPathAttribute
-- Code: `modules/mono/editor/Godot.NET.Sdk/Godot.SourceGenerators/ScriptPathAttributeGenerator.cs` — VisitGodotScriptClass
+- Code: `modules/mono/glue/GodotSharp/GodotSharp/Core/Attributes/ScriptPathAttribute.cs:9` — ScriptPathAttribute
+- Code: `modules/mono/editor/Godot.NET.Sdk/Godot.SourceGenerators/ScriptPathAttributeGenerator.cs:63` — VisitGodotScriptClass
 
 ## Segment
 
@@ -2768,7 +2768,7 @@ Relationships:
 - Segment → **Face** (many-to-one): Each segment refers to the face from which its glyph and behavior data is obtained.
 
 Evidence:
-- Code: `thirdparty/graphite/src/inc/Segment.h` — graphite2::Segment
+- Code: `thirdparty/graphite/src/inc/Segment.h:213` — graphite2::Segment
 - Code: `thirdparty/graphite/src/gr_segment.cpp` — gr_seg_cinfo, gr_seg_first_slot, and gr_seg_last_slot
 
 ## ShaderMaterial
@@ -2784,7 +2784,7 @@ Lifecycle: Created or loaded as a Resource, assigned a Shader and parameter valu
 | `shader` | `Shader` | Custom shader program used by the material. |
 
 Evidence:
-- Code: `doc/classes/ShaderMaterial.xml` — ShaderMaterial
+- Code: `doc/classes/ShaderMaterial.xml:2` — ShaderMaterial
 
 ## Shape
 
@@ -2798,7 +2798,7 @@ Relationships:
 - Shape → **PhysicsMaterialSimple** (many-to-one): Concrete shapes can resolve a PhysicsMaterial, falling back to the default material where applicable.
 
 Evidence:
-- Code: `thirdparty/jolt_physics/Jolt/Physics/Collision/Shape/Shape.h` — Shape
+- Code: `thirdparty/jolt_physics/Jolt/Physics/Collision/Shape/Shape.h:36` — Shape
 - Code: `thirdparty/jolt_physics/Jolt/Physics/Collision/Shape/ConvexShape.h` — ConvexShape::GetMaterial
 
 ## Shape2D
@@ -2813,8 +2813,8 @@ Relationships:
 - Shape2D → **CollisionShape2D** (one-to-many): One Shape2D resource can be assigned to many CollisionShape2D nodes.
 
 Evidence:
-- Code: `doc/classes/CircleShape2D.xml` — CircleShape2D
-- Code: `doc/classes/CollisionObject2D.xml` — CollisionObject2D
+- Code: `doc/classes/CircleShape2D.xml:2` — CircleShape2D
+- Code: `doc/classes/CollisionObject2D.xml:2` — CollisionObject2D
 
 ## Skeleton
 
@@ -2830,7 +2830,7 @@ Lifecycle: Built or restored with joints, parent indices are calculated, consume
 
 Evidence:
 - Code: `thirdparty/jolt_physics/Jolt/Skeleton/Skeleton.h` — Skeleton and Skeleton::Joint
-- Code: `thirdparty/jolt_physics/Jolt/Skeleton/Skeleton.cpp` — Skeleton::CalculateParentJointIndices
+- Code: `thirdparty/jolt_physics/Jolt/Skeleton/Skeleton.cpp:34` — Skeleton::CalculateParentJointIndices
 
 ## SkeletonModificationStack2D
 
@@ -2846,7 +2846,7 @@ Lifecycle: Created and configured with modifications, assigned to a Skeleton2D, 
 | `strength` | `float` | Overall strength with which modifications are applied. |
 
 Evidence:
-- Code: `doc/classes/SkeletonModificationStack2D.xml` — SkeletonModificationStack2D
+- Code: `doc/classes/SkeletonModificationStack2D.xml:2` — SkeletonModificationStack2D
 
 ## SoftBodySharedSettings
 
@@ -2867,7 +2867,7 @@ Relationships:
 - SoftBodySharedSettings → **PhysicsMaterialSimple** (many-to-many): Soft-body settings retain a list of materials that can be assigned to faces.
 
 Evidence:
-- Code: `thirdparty/jolt_physics/Jolt/Physics/SoftBody/SoftBodySharedSettings.h` — SoftBodySharedSettings
+- Code: `thirdparty/jolt_physics/Jolt/Physics/SoftBody/SoftBodySharedSettings.h:15` — SoftBodySharedSettings
 - Code: `thirdparty/jolt_physics/Jolt/Physics/SoftBody/SoftBodyMotionProperties.h` — SoftBodyMotionProperties::GetSettings, GetMaterials, GetFaces
 
 ## SourceLine
@@ -2884,7 +2884,7 @@ Lifecycle: Created when project source is split into lines, passed through conve
 | `is_comment` | `bool` | Whether the line is classified as a comment. |
 
 Evidence:
-- Code: `editor/project_upgrade/project_converter_3_to_4.h` — SourceLine
+- Code: `editor/project_upgrade/project_converter_3_to_4.h:39` — SourceLine
 - Code: `editor/project_upgrade/project_converter_3_to_4.h` — ProjectConverter3To4::rename_common
 
 ## SpoofImpl
@@ -2901,8 +2901,8 @@ Lifecycle: Created behind a checker handle, validated before operations, and rel
 | `fAllowedLocales` | `const char *` | Stores the allowed-locale list. |
 
 Evidence:
-- Code: `thirdparty/icu4c/i18n/uspoof_impl.h` — SpoofImpl
-- Code: `thirdparty/icu4c/i18n/uspoof_impl.cpp` — SpoofImpl::validateThis
+- Code: `thirdparty/icu4c/i18n/uspoof_impl.h:55` — SpoofImpl
+- Code: `thirdparty/icu4c/i18n/uspoof_impl.cpp:110` — SpoofImpl::validateThis
 
 ## SpvReflectBlockVariable
 
@@ -2926,8 +2926,8 @@ Relationships:
 - SpvReflectBlockVariable → **SpvReflectBlockVariable** (zero-to-many): member_count and members describe nested block-variable members.
 
 Evidence:
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — SpvReflectBlockVariable
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — spvReflectEnumeratePushConstantBlocks
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:457` — SpvReflectBlockVariable
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:982` — spvReflectEnumeratePushConstantBlocks
 
 ## SpvReflectDescriptorBinding
 
@@ -2953,8 +2953,8 @@ Relationships:
 - SpvReflectDescriptorBinding → **SpvReflectDescriptorBinding** (zero-to-one): uav_counter_binding can point to one counter binding.
 
 Evidence:
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — SpvReflectDescriptorBinding
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — spvReflectGetDescriptorBinding
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:484` — SpvReflectDescriptorBinding
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:1061` — spvReflectGetDescriptorBinding
 
 ## SpvReflectDescriptorSet
 
@@ -2974,8 +2974,8 @@ Relationships:
 - SpvReflectDescriptorSet → **SpvReflectDescriptorBinding** (one-to-many): A descriptor set stores binding_count and a bindings pointer array.
 
 Evidence:
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — SpvReflectDescriptorSet
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — spvReflectEnumerateDescriptorSets
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:517` — SpvReflectDescriptorSet
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:774` — spvReflectEnumerateDescriptorSets
 
 ## SpvReflectEntryPoint
 
@@ -3000,7 +3000,7 @@ Relationships:
 - SpvReflectEntryPoint → **SpvReflectDescriptorSet** (one-to-many): The entry point stores descriptor_set_count and descriptor_sets.
 
 Evidence:
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — SpvReflectEntryPoint
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:530` — SpvReflectEntryPoint
 
 ## SpvReflectInterfaceVariable
 
@@ -3025,8 +3025,8 @@ Relationships:
 - SpvReflectInterfaceVariable → **SpvReflectInterfaceVariable** (zero-to-many): member_count and members describe nested interface-variable members.
 
 Evidence:
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — SpvReflectInterfaceVariable
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — spvReflectEnumerateInterfaceVariables
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:424` — SpvReflectInterfaceVariable
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:826` — spvReflectEnumerateInterfaceVariables
 
 ## SpvReflectShaderModule
 
@@ -3056,7 +3056,7 @@ Relationships:
 - SpvReflectShaderModule → **SpvReflectSpecializationConstant** (one-to-many): The module stores spec_constant_count and spec_constants.
 
 Evidence:
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — SpvReflectShaderModule
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:600` — SpvReflectShaderModule
 - Code: `thirdparty/spirv-reflect/spirv_reflect.h` — spvReflectCreateShaderModule, spvReflectDestroyShaderModule
 
 ## SpvReflectSpecializationConstant
@@ -3077,8 +3077,8 @@ Lifecycle: Owned by reflection-module data; specialization-constant enumeration 
 | `default_value` | `void*` | Raw default-value data. |
 
 Evidence:
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — SpvReflectSpecializationConstant
-- Code: `thirdparty/spirv-reflect/spirv_reflect.h` — spvReflectEnumerateSpecializationConstants
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:579` — SpvReflectSpecializationConstant
+- Code: `thirdparty/spirv-reflect/spirv_reflect.h:1042` — spvReflectEnumerateSpecializationConstants
 
 ## StreamPeerBuffer
 
@@ -3093,7 +3093,7 @@ Lifecycle: Created, written or initialized with data, read through its moving cu
 | `data_array` | `PackedByteArray` | Underlying byte-array stream data. |
 
 Evidence:
-- Code: `doc/classes/StreamPeerBuffer.xml` — StreamPeerBuffer
+- Code: `doc/classes/StreamPeerBuffer.xml:2` — StreamPeerBuffer
 
 ## StringName
 
@@ -3112,9 +3112,9 @@ Relationships:
 - StringName → **Translation** (one-to-many): Translation uses StringName values for message keys and translated strings.
 
 Evidence:
-- Code: `core/string/string_name.h` — StringName
+- Code: `core/string/string_name.h:40` — StringName
 - Code: `core/string/string_name.h` — StringName::_Data
-- Code: `core/string/string_name.cpp` — StringName::Table
+- Code: `core/string/string_name.cpp:38` — StringName::Table
 
 ## SubGrid
 
@@ -3132,8 +3132,8 @@ Lifecycle: Created with x, y, geometry, and primitive identifiers; queried by su
 | `primID` | `unsigned int` | Identifier used to retrieve the GridMesh::Grid record. |
 
 Evidence:
-- Code: `thirdparty/embree/kernels/geometry/subgrid.h` — SubGrid
-- Code: `thirdparty/embree/kernels/geometry/subgrid_intersector.h` — SubGridIntersector1Moeller
+- Code: `thirdparty/embree/kernels/geometry/subgrid.h:13` — SubGrid
+- Code: `thirdparty/embree/kernels/geometry/subgrid_intersector.h:21` — SubGridIntersector1Moeller
 
 ## SwapchainKHR
 
@@ -3144,8 +3144,8 @@ Role: identifies a presentation target
 Lifecycle: A `SwapchainCreateInfoKHR` configures creation and `PresentInfoKHR` references the handle; handle retirement is outside the supplied declarations.
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp` — struct SwapchainCreateInfoKHR
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp` — struct PresentInfoKHR
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp:154367` — struct SwapchainCreateInfoKHR
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp:135085` — struct PresentInfoKHR
 
 ## Test Script Fixture
 
@@ -3165,7 +3165,7 @@ Relationships:
 - Test Script Fixture → **Expected Result Fixture** (one-to-one): One executable fixture conventionally has one same-basename `.out` expectation.
 
 Evidence:
-- Code: `modules/gdscript/tests/scripts/analyzer/features/lambda_typed.gd` — test()
+- Code: `modules/gdscript/tests/scripts/analyzer/features/lambda_typed.gd:1` — test()
 - Code: `modules/gdscript/tests/scripts/completion/common/identifiers_in_call.gd` — _init()
 
 ## Theme
@@ -3177,8 +3177,8 @@ Role: UI styling data.
 Lifecycle: Created or loaded, assigned at project or Control scope, inherited by eligible child controls, and released when unreferenced.
 
 Evidence:
-- Code: `doc/classes/Theme.xml` — Theme
-- Code: `doc/classes/StyleBox.xml` — StyleBox
+- Code: `doc/classes/Theme.xml:2` — Theme
+- Code: `doc/classes/StyleBox.xml:2` — StyleBox
 
 ## Theora Stream Information
 
@@ -3199,7 +3199,7 @@ Lifecycle: Initialized before header parsing or encoding setup, populated from T
 | `pixel_fmt` | `th_pixel_fmt` | Chroma pixel format. |
 
 Evidence:
-- Code: `thirdparty/libtheora/theora/codec.h` — th_info
+- Code: `thirdparty/libtheora/theora/codec.h:157` — th_info
 
 ## TileData
 
@@ -3213,7 +3213,7 @@ Relationships:
 - TileData → **TileSet** (many-to-one): Each TileData object represents a tile in one TileSet source.
 
 Evidence:
-- Code: `doc/classes/TileData.xml` — TileData
+- Code: `doc/classes/TileData.xml:2` — TileData
 
 ## TileMapLayerCellData
 
@@ -3229,7 +3229,7 @@ Lifecycle: Created or updated when a layer cell changes and removed when the cel
 | `cell` | `TileMapCell` | Tile selection and alternative data for the coordinate. |
 
 Evidence:
-- Code: `scene/2d/tile_map_layer.h` — CellData
+- Code: `scene/2d/tile_map_layer.h:105` — CellData
 - Code: `scene/2d/tile_map_layer.h` — TileMapLayer::get_tile_map_layer_data
 - Code: `scene/2d/tile_map_layer.cpp` — CellData::coords and CellData::cell usage
 
@@ -3249,8 +3249,8 @@ Relationships:
 - TileSet → **TileData** (one-to-many): Tile sources exposed through a TileSet provide data for many individual tiles.
 
 Evidence:
-- Code: `doc/classes/TileSet.xml` — TileSet
-- Code: `doc/classes/TileData.xml` — TileData
+- Code: `doc/classes/TileSet.xml:2` — TileSet
+- Code: `doc/classes/TileData.xml:2` — TileData
 
 ## Transform3D
 
@@ -3266,9 +3266,9 @@ Lifecycle: Constructed as a value, composed or interpolated in math code, transp
 | `origin` | `Vector3` | Translation component. |
 
 Evidence:
-- Code: `core/math/transform_3d.h` — Transform3D
-- Code: `core/math/transform_3d.cpp` — Transform3D::interpolate_with
-- Code: `core/variant/method_ptrcall.h` — PtrToArg<Transform3D>
+- Code: `core/math/transform_3d.h:38` — Transform3D
+- Code: `core/math/transform_3d.cpp:96` — Transform3D::interpolate_with
+- Code: `core/variant/method_ptrcall.h:203` — PtrToArg<Transform3D>
 
 ## Translation
 
@@ -3288,9 +3288,9 @@ Relationships:
 - Translation → **StringName** (one-to-many): Message keys and translated strings use interned names.
 
 Evidence:
-- Code: `core/string/translation.h` — Translation
+- Code: `core/string/translation.h:38` — Translation
 - Code: `core/string/translation.h` — Translation::MessageKey
-- Code: `core/string/translation.cpp` — Translation::get_message
+- Code: `core/string/translation.cpp:164` — Translation::get_message
 
 ## TranslationDomain
 
@@ -3309,9 +3309,9 @@ Relationships:
 - TranslationDomain → **Translation** (one-to-many): A TranslationDomain holds a set of Translation references.
 
 Evidence:
-- Code: `core/string/translation_domain.h` — TranslationDomain
-- Code: `core/string/translation_domain.cpp` — TranslationDomain::get_translations
-- Code: `core/string/translation_server.cpp` — TranslationServer::get_or_add_domain
+- Code: `core/string/translation_domain.h:37` — TranslationDomain
+- Code: `core/string/translation_domain.cpp:289` — TranslationDomain::get_translations
+- Code: `core/string/translation_server.cpp:581` — TranslationServer::get_or_add_domain
 
 ## TriRef
 
@@ -3327,7 +3327,7 @@ Lifecycle: Created or remapped during boolean and mesh operations, carried in Me
 | `faceID` | `int` | Referenced source triangle or face identifier. |
 
 Evidence:
-- Code: `thirdparty/manifold/src/shared.h` — struct TriRef
+- Code: `thirdparty/manifold/src/shared.h:135` — struct TriRef
 - Code: `thirdparty/manifold/src/impl.h` — struct Manifold::Impl::MeshRelationD
 - Code: `thirdparty/manifold/src/boolean_result.cpp` — struct MapTriRef; outR.meshRelation_.triRef
 
@@ -3349,10 +3349,10 @@ Relationships:
 - TriangleMesh → **AABB** (one-to-many): TriangleMesh BVH data partitions triangle bounds for spatial queries.
 
 Evidence:
-- Code: `core/math/triangle_mesh.h` — TriangleMesh
+- Code: `core/math/triangle_mesh.h:36` — TriangleMesh
 - Code: `core/math/triangle_mesh.h` — TriangleMesh::Triangle
 - Code: `core/math/triangle_mesh.h` — TriangleMesh::BVH
-- Code: `core/math/triangle_mesh.cpp` — TriangleMesh::create
+- Code: `core/math/triangle_mesh.cpp:108` — TriangleMesh::create
 
 ## TwoBodyConstraint
 
@@ -3368,8 +3368,8 @@ Lifecycle: Created by a concrete TwoBodyConstraintSettings subtype, attached to 
 | `mBody2` | `Body *` | Second constrained body used during island construction. |
 
 Evidence:
-- Code: `thirdparty/jolt_physics/Jolt/Physics/Constraints/TwoBodyConstraint.cpp` — TwoBodyConstraint::BuildIslands
-- Code: `thirdparty/jolt_physics/Jolt/Physics/Constraints/TwoBodyConstraint.h` — TwoBodyConstraint
+- Code: `thirdparty/jolt_physics/Jolt/Physics/Constraints/TwoBodyConstraint.cpp:23` — TwoBodyConstraint::BuildIslands
+- Code: `thirdparty/jolt_physics/Jolt/Physics/Constraints/TwoBodyConstraint.h:12` — TwoBodyConstraint
 
 ## UCPTrie
 
@@ -3385,7 +3385,7 @@ Lifecycle: Opened from or built into binary trie data, queried by Unicode servic
 | `name` | `const char *` | Stores an identifying name. |
 
 Evidence:
-- Code: `thirdparty/icu4c/common/unicode/ucptrie.h` — UCPTrie
+- Code: `thirdparty/icu4c/common/unicode/ucptrie.h:24` — UCPTrie
 - Code: `thirdparty/icu4c/common/normalizer2impl.h` — Normalizer2Impl::normTrie
 
 ## UConverter
@@ -3406,8 +3406,8 @@ Relationships:
 - UConverter → **UConverterSharedData** (many-to-one): Many converter instances can share one converter-data record.
 
 Evidence:
-- Code: `thirdparty/icu4c/common/ucnv_bld.h` — UConverter
-- Code: `thirdparty/icu4c/common/ucnv.cpp` — converter->sharedData
+- Code: `thirdparty/icu4c/common/ucnv_bld.h:34` — UConverter
+- Code: `thirdparty/icu4c/common/ucnv.cpp:384` — converter->sharedData
 
 ## UConverterSharedData
 
@@ -3427,7 +3427,7 @@ Relationships:
 - UConverterSharedData → **UConverter** (one-to-many): Shared converter data can be referenced by converter instances.
 
 Evidence:
-- Code: `thirdparty/icu4c/common/ucnv_bld.h` — UConverterSharedData
+- Code: `thirdparty/icu4c/common/ucnv_bld.h:93` — UConverterSharedData
 
 ## UPNPDev
 
@@ -3445,8 +3445,8 @@ Relationships:
 - UPNPDev → **UPNPDev** (one-to-many): One list head can reach many device nodes through successive `pNext` links.
 
 Evidence:
-- Code: `thirdparty/miniupnpc/include/miniupnpc/upnpdev.h` — struct UPNPDev
-- Code: `thirdparty/miniupnpc/src/miniupnpc.c` — UPNP_GetValidIGD
+- Code: `thirdparty/miniupnpc/include/miniupnpc/upnpdev.h:24` — struct UPNPDev
+- Code: `thirdparty/miniupnpc/src/miniupnpc.c:505` — UPNP_GetValidIGD
 
 ## UPNPDevice
 
@@ -3457,7 +3457,7 @@ Role: Represents a discovered device for device-level UPnP operations.
 Lifecycle: A UPNP implementation discovers or constructs device objects, callers perform device operations, and normal reference counting retires them.
 
 Evidence:
-- Code: `modules/upnp/upnp_device.h` — class UPNPDevice : public RefCounted
+- Code: `modules/upnp/upnp_device.h:36` — class UPNPDevice : public RefCounted
 - Code: `modules/upnp/doc_classes/UPNPDevice.xml` — class UPNPDevice
 
 ## UResourceBundle
@@ -3473,8 +3473,8 @@ Lifecycle: Opened against resource data, queried for values, and closed by resou
 | `fKey` | `const char *` | Stores the current resource key. |
 
 Evidence:
-- Code: `thirdparty/icu4c/common/uresimp.h` — UResourceBundle
-- Code: `thirdparty/icu4c/common/uresdata.h` — ResourceDataValue
+- Code: `thirdparty/icu4c/common/uresimp.h:63` — UResourceBundle
+- Code: `thirdparty/icu4c/common/uresdata.h:513` — ResourceDataValue
 
 ## VP8Encoder
 
@@ -3500,9 +3500,9 @@ Relationships:
 - VP8Encoder → **WebPPicture** (many-to-one): An internal encoder session processes one caller picture.
 
 Evidence:
-- Code: `thirdparty/libwebp/src/enc/vp8i_enc.h` — struct VP8Encoder
+- Code: `thirdparty/libwebp/src/enc/vp8i_enc.h:139` — struct VP8Encoder
 - Code: `thirdparty/libwebp/src/enc/webp_enc.c` — InitVP8Encoder, WebPEncode
-- Code: `thirdparty/libwebp/src/enc/frame_enc.c` — VP8EncTokenLoop
+- Code: `thirdparty/libwebp/src/enc/frame_enc.c:788` — VP8EncTokenLoop
 
 ## VP8LHashChain
 
@@ -3518,7 +3518,7 @@ Lifecycle: Allocate for image dimensions and chosen window settings, populate wh
 | `size_` | `int` | Number of image positions represented. |
 
 Evidence:
-- Code: `thirdparty/libwebp/src/enc/backward_references_enc.h` — struct VP8LHashChain
+- Code: `thirdparty/libwebp/src/enc/backward_references_enc.h:123` — struct VP8LHashChain
 - Code: `thirdparty/libwebp/src/enc/backward_references_enc.c` — VP8LHashChainFindCopy, VP8LHashChainFindOffset
 
 ## Variant
@@ -3540,9 +3540,9 @@ Relationships:
 - Variant → **Object** (zero-to-one): A Variant can represent an engine object reference.
 
 Evidence:
-- Code: `core/variant/variant.h` — Variant
-- Code: `core/variant/variant_internal.h` — VariantInternalAccessor
-- Code: `core/variant/variant_destruct.h` — VariantDestruct
+- Code: `core/variant/variant.h:94` — Variant
+- Code: `core/variant/variant_internal.h:577` — VariantInternalAccessor
+- Code: `core/variant/variant_destruct.h:37` — VariantDestruct
 
 ## VideoSessionCreateInfoKHR
 
@@ -3559,7 +3559,7 @@ Lifecycle: A caller populates the configuration before a video-session creation 
 | `pNext` | `const void *` | Optional extension-chain pointer. |
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp` — struct VideoSessionCreateInfoKHR
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_structs.hpp:172949` — struct VideoSessionCreateInfoKHR
 
 ## VideoStreamTheora
 
@@ -3571,7 +3571,7 @@ Lifecycle: A resource loader constructs the stream resource; playback consumes i
 
 Evidence:
 - Code: `modules/theora/video_stream_theora.h` — class VideoStreamTheora : public VideoStream; class VideoStreamPlaybackTheora
-- Code: `modules/theora/editor/movie_writer_ogv.h` — class MovieWriterOGV : public MovieWriter
+- Code: `modules/theora/editor/movie_writer_ogv.h:40` — class MovieWriterOGV : public MovieWriter
 
 ## VisualShaderConnection
 
@@ -3590,7 +3590,7 @@ Lifecycle: Created or removed with a VisualShader graph edit and retained while 
 
 Evidence:
 - Code: `modules/visual_shader/visual_shader.h` — VisualShader::Connection
-- Code: `modules/visual_shader/visual_shader.cpp` — VisualShader::Connection
+- Code: `modules/visual_shader/visual_shader.cpp:1063` — VisualShader::Connection
 
 ## VkAndroidHardwareBufferFormatPropertiesANDROID
 
@@ -3608,7 +3608,7 @@ Lifecycle: The caller chains it from VkAndroidHardwareBufferPropertiesANDROID be
 | `samplerYcbcrConversionComponents` | `VkComponentMapping` | Reports suggested component mapping for YCbCr conversion. |
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_android.h` — VkAndroidHardwareBufferFormatPropertiesANDROID
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_android.h:66` — VkAndroidHardwareBufferFormatPropertiesANDROID
 - External (official, verified): [Vulkan Specification: Memory Allocation](https://docs.vulkan.org/spec/latest/chapters/memory.html), accessed 2026-07-16
 
 ## VkSurfaceKHR
@@ -3620,8 +3620,8 @@ Role: presentation handle
 Lifecycle: Written to the command's output pointer on creation; retirement behavior is outside the inspected Android platform header.
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_android.h` — vkCreateAndroidSurfaceKHR
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_handles.hpp` — SurfaceKHR
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_android.h:39` — vkCreateAndroidSurfaceKHR
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_handles.hpp:2330` — SurfaceKHR
 
 ## VkViSurfaceCreateInfoNN
 
@@ -3642,8 +3642,8 @@ Relationships:
 - VkViSurfaceCreateInfoNN → **VkSurfaceKHR** (zero-to-one): One successful surface-creation call writes one surface handle for the supplied creation record.
 
 Evidence:
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_vi.h` — VkViSurfaceCreateInfoNN
-- Code: `thirdparty/vulkan/include/vulkan/vulkan_vi.h` — vkCreateViSurfaceNN
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_vi.h:27` — VkViSurfaceCreateInfoNN
+- Code: `thirdparty/vulkan/include/vulkan/vulkan_vi.h:38` — vkCreateViSurfaceNN
 
 ## VmaAllocator
 
@@ -3655,7 +3655,7 @@ Lifecycle: It is returned by allocator creation and is then passed to VMA alloca
 
 Evidence:
 - Code: `thirdparty/vulkan/vk_mem_alloc.h` — VmaAllocator, VmaAllocator_T, vmaCreateAllocator
-- Code: `thirdparty/vulkan/patches/0003-VMA-add-vmaCalculateLazilyAllocatedBytes.patch` — vmaCalculateLazilyAllocatedBytes
+- Code: `thirdparty/vulkan/patches/0003-VMA-add-vmaCalculateLazilyAllocatedBytes.patch:19` — vmaCalculateLazilyAllocatedBytes
 
 ## VmaAllocatorCreateInfo
 
@@ -3677,8 +3677,8 @@ Relationships:
 - VmaAllocatorCreateInfo → **VmaAllocator** (zero-or-one): One creation configuration can produce one allocator handle when vmaCreateAllocator succeeds.
 
 Evidence:
-- Code: `thirdparty/vulkan/vk_mem_alloc.h` — VmaAllocatorCreateInfo
-- Code: `thirdparty/vulkan/vk_mem_alloc.h` — vmaCreateAllocator
+- Code: `thirdparty/vulkan/vk_mem_alloc.h:355` — VmaAllocatorCreateInfo
+- Code: `thirdparty/vulkan/vk_mem_alloc.h:878` — vmaCreateAllocator
 
 ## Vorbis Block
 
@@ -3701,8 +3701,8 @@ Relationships:
 - Vorbis Block → **Ogg Packet** (one-to-one): A synthesis call consumes one Ogg packet to populate one Vorbis block.
 
 Evidence:
-- Code: `thirdparty/libvorbis/vorbis/codec.h` — vorbis_block
-- Code: `thirdparty/libvorbis/synthesis.c` — vorbis_synthesis
+- Code: `thirdparty/libvorbis/vorbis/codec.h:87` — vorbis_block
+- Code: `thirdparty/libvorbis/synthesis.c:25` — vorbis_synthesis
 
 ## WaylandThread.WindowState
 
@@ -3721,7 +3721,7 @@ Lifecycle: Held by the Wayland thread while a window is tracked; teardown detail
 
 Evidence:
 - Code: `platform/linuxbsd/wayland/wayland_thread.h` — WaylandThread::WindowState
-- Code: `platform/linuxbsd/wayland/wayland_thread.cpp` — WaylandThread::window_get_state
+- Code: `platform/linuxbsd/wayland/wayland_thread.cpp:4612` — WaylandThread::window_get_state
 
 ## WebP Decoder State
 
@@ -3739,7 +3739,7 @@ Lifecycle: Allocated for a WebP decode, filled while headers and partitions are 
 | `alpha_prev_line` | `const uint8_t *` | Most recently decoded alpha row or null. |
 
 Evidence:
-- Code: `thirdparty/libwebp/src/dec/vp8i_dec.h` — VP8Decoder
+- Code: `thirdparty/libwebp/src/dec/vp8i_dec.h:185` — VP8Decoder
 
 ## WebPChunk
 
@@ -3760,7 +3760,7 @@ Relationships:
 - WebPChunk → **WebPMux** (many-to-one): Many chunks are linked into one mux or one mux image record.
 
 Evidence:
-- Code: `thirdparty/libwebp/src/mux/muxi.h` — struct WebPChunk
+- Code: `thirdparty/libwebp/src/mux/muxi.h:39` — struct WebPChunk
 - Code: `thirdparty/libwebp/src/mux/muxinternal.c` — ChunkDiskSize, MuxAssemble
 
 ## WebPConfig
@@ -3785,7 +3785,7 @@ Relationships:
 
 Evidence:
 - Code: `thirdparty/libwebp/src/webp/encode.h` — struct WebPConfig, WebPConfigInit, WebPValidateConfig
-- Code: `thirdparty/libwebp/src/enc/config_enc.c` — WebPConfigInitInternal
+- Code: `thirdparty/libwebp/src/enc/config_enc.c:27` — WebPConfigInitInternal
 
 ## WebPData
 
@@ -3804,8 +3804,8 @@ Relationships:
 - WebPData → **WebPMux** (one-to-many): A mux can hold many chunk or image payload slices represented as WebPData.
 
 Evidence:
-- Code: `thirdparty/libwebp/src/webp/mux_types.h` — struct WebPData
-- Code: `thirdparty/libwebp/src/mux/muxedit.c` — WebPMuxSetChunk
+- Code: `thirdparty/libwebp/src/webp/mux_types.h:30` — struct WebPData
+- Code: `thirdparty/libwebp/src/mux/muxedit.c:189` — WebPMuxSetChunk
 
 ## WebPMux
 
@@ -3829,9 +3829,9 @@ Relationships:
 - WebPMux → **WebPMuxImage** (one-to-many): One mux chains multiple still-image or animation-frame records.
 
 Evidence:
-- Code: `thirdparty/libwebp/src/mux/muxi.h` — struct WebPMux
+- Code: `thirdparty/libwebp/src/mux/muxi.h:65` — struct WebPMux
 - Code: `thirdparty/libwebp/src/mux/muxinternal.c` — MuxAssemble
-- Code: `thirdparty/libwebp/src/mux/muxread.c` — WebPMuxCreateInternal
+- Code: `thirdparty/libwebp/src/mux/muxread.c:187` — WebPMuxCreateInternal
 
 ## WebPMuxImage
 
@@ -3853,7 +3853,7 @@ Relationships:
 - WebPMuxImage → **WebPChunk** (one-to-many): One image record groups header, alpha, and image chunks.
 
 Evidence:
-- Code: `thirdparty/libwebp/src/mux/muxi.h` — struct WebPMuxImage
+- Code: `thirdparty/libwebp/src/mux/muxi.h:51` — struct WebPMuxImage
 - Code: `thirdparty/libwebp/src/mux/muxread.c` — MuxImageCount, GetImageInfo
 
 ## WebPPicture
@@ -3881,7 +3881,7 @@ Relationships:
 
 Evidence:
 - Code: `thirdparty/libwebp/src/webp/encode.h` — struct WebPPicture, WebPPictureAlloc, WebPPictureFree
-- Code: `thirdparty/libwebp/src/enc/picture_enc.c` — WebPPictureAlloc
+- Code: `thirdparty/libwebp/src/enc/picture_enc.c:167` — WebPPictureAlloc
 
 ## WebPRescaler
 
@@ -3903,7 +3903,7 @@ Lifecycle: Initialize for source and destination dimensions, repeatedly import a
 | `x_add/x_sub/y_add/y_sub` | `int` | Fixed-point horizontal and vertical stepping parameters. |
 
 Evidence:
-- Code: `thirdparty/libwebp/src/utils/rescaler_utils.h` — struct WebPRescaler
+- Code: `thirdparty/libwebp/src/utils/rescaler_utils.h:30` — struct WebPRescaler
 - Code: `thirdparty/libwebp/src/utils/rescaler_utils.c` — WebPRescalerInit, WebPRescalerImport, WebPRescalerExport
 
 ## WebRTCDataChannel
@@ -3918,8 +3918,8 @@ Relationships:
 - WebRTCDataChannel → **WebRTCPeerConnection** (many-to-one): Many channels can belong to one peer connection.
 
 Evidence:
-- Code: `modules/webrtc/webrtc_data_channel.h` — WebRTCDataChannel
-- Code: `modules/webrtc/webrtc_peer_connection.h` — WebRTCPeerConnection
+- Code: `modules/webrtc/webrtc_data_channel.h:35` — WebRTCDataChannel
+- Code: `modules/webrtc/webrtc_peer_connection.h:35` — WebRTCPeerConnection
 
 ## WebRTCPeerConnection
 
@@ -3933,7 +3933,7 @@ Relationships:
 - WebRTCPeerConnection → **WebRTCDataChannel** (one-to-many): One peer connection can create multiple data channels.
 
 Evidence:
-- Code: `modules/webrtc/webrtc_peer_connection.h` — WebRTCPeerConnection
+- Code: `modules/webrtc/webrtc_peer_connection.h:35` — WebRTCPeerConnection
 - Code: `modules/webrtc/webrtc_peer_connection_extension.h` — WebRTCPeerConnectionExtension::_create_data_channel
 
 ## WebSocketMultiplayerPacket
@@ -3946,7 +3946,7 @@ Lifecycle: Created when packet state is queued or received and discarded after m
 
 Evidence:
 - Code: `modules/websocket/websocket_multiplayer_peer.h` — WebSocketMultiplayerPeer::Packet
-- Code: `modules/websocket/websocket_multiplayer_peer.h` — WebSocketMultiplayerPeer
+- Code: `modules/websocket/websocket_multiplayer_peer.h:39` — WebSocketMultiplayerPeer
 
 ## XRPose
 
@@ -3968,8 +3968,8 @@ Relationships:
 - XRPose → **XRTracker** (many-to-one): A positional tracker can expose multiple named poses, while each pose belongs to one tracker context.
 
 Evidence:
-- Code: `servers/xr/xr_pose.h` — XRPose
-- Code: `servers/xr/xr_positional_tracker.h` — XRPositionalTracker
+- Code: `servers/xr/xr_pose.h:36` — XRPose
+- Code: `servers/xr/xr_positional_tracker.h:44` — XRPositionalTracker
 
 ## XRTracker
 
@@ -3984,7 +3984,7 @@ Lifecycle: Created with a tracker type, registered or used by XR server services
 | `type` | `XRServer::TrackerType` | Classifies the tracker source. |
 
 Evidence:
-- Code: `servers/xr/xr_tracker.h` — XRTracker
+- Code: `servers/xr/xr_tracker.h:40` — XRTracker
 - Code: `servers/xr/xr_tracker.cpp` — XRTracker type assignment
 
 ## XrGeneratedDispatchTableCore
@@ -3996,7 +3996,7 @@ Role: Routes loader API entry points to the selected runtime implementation.
 Lifecycle: A loader instance owns the generated dispatch table after runtime initialization and releases it when the loader instance is destroyed.
 
 Evidence:
-- Code: `thirdparty/openxr/src/xr_generated_dispatch_table_core.h` — struct XrGeneratedDispatchTableCore
+- Code: `thirdparty/openxr/src/xr_generated_dispatch_table_core.h:41` — struct XrGeneratedDispatchTableCore
 - Code: `thirdparty/openxr/src/loader/loader_instance.hpp` — LoaderInstance::DispatchTable
 
 ## XrInstanceCreateInfo
@@ -4014,8 +4014,8 @@ Lifecycle: The caller initializes and passes it to instance creation; the loader
 | `enabledExtensionNames` | `const char * const *` | Caller-provided extension name array. |
 
 Evidence:
-- Code: `thirdparty/openxr/include/openxr/openxr.h` — XrInstanceCreateInfo
-- Code: `thirdparty/openxr/src/loader/loader_core.cpp` — xrCreateInstance
+- Code: `thirdparty/openxr/include/openxr/openxr.h:1202` — XrInstanceCreateInfo
+- Code: `thirdparty/openxr/src/loader/loader_core.cpp:49` — xrCreateInstance
 
 ## hb_blob_t
 
@@ -4033,7 +4033,7 @@ Relationships:
 - hb_blob_t → **hb_face_t** (one-to-many): A face obtains its binary font data from a blob, and a blob can be shared by face-related objects.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-blob.hh` — hb_blob_t
+- Code: `thirdparty/harfbuzz/src/hb-blob.hh:36` — hb_blob_t
 - Code: `thirdparty/harfbuzz/src/hb-face.cc` — face data blob access
 
 ## hb_buffer_t
@@ -4054,9 +4054,9 @@ Relationships:
 - hb_buffer_t → **hb_font_t** (many-to-one): Each shaping invocation applies one font to one buffer, while a font can shape many buffers.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-buffer.hh` — hb_buffer_t
+- Code: `thirdparty/harfbuzz/src/hb-buffer.hh:67` — hb_buffer_t
 - Code: `thirdparty/harfbuzz/src/hb-buffer.cc` — buffer->info, buffer->pos, and buffer->len
-- Code: `thirdparty/harfbuzz/src/hb-ot-shape.cc` — hb_ot_shape_context_t
+- Code: `thirdparty/harfbuzz/src/hb-ot-shape.cc:450` — hb_ot_shape_context_t
 
 ## hb_face_t
 
@@ -4071,7 +4071,7 @@ Relationships:
 - hb_face_t → **hb_font_t** (one-to-many): Many font instances can be created from the same face.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-face.hh` — hb_face_t
+- Code: `thirdparty/harfbuzz/src/hb-face.hh:40` — hb_face_t
 - Code: `thirdparty/harfbuzz/src/hb-face.cc` — OpenTypeFontFile and OpenTypeFontFace access
 
 ## hb_font_t
@@ -4087,7 +4087,7 @@ Relationships:
 - hb_font_t → **hb_buffer_t** (one-to-many): One font can shape many independent buffers.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-font.hh` — hb_font_t
+- Code: `thirdparty/harfbuzz/src/hb-font.hh:104` — hb_font_t
 - Code: `thirdparty/harfbuzz/src/hb-font.cc` — hb_font_t face and variation handling
 
 ## hb_raster_image_t
@@ -4099,8 +4099,8 @@ Role: Stores pixel-image state used by raster paint and image conversion code.
 Lifecycle: Created for raster operations, passed to image helpers and paint code, then released by its owning raster operation.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-raster-image.hh` — hb_raster_image_t
-- Code: `thirdparty/harfbuzz/src/hb-raster-paint.hh` — hb_raster_paint_t
+- Code: `thirdparty/harfbuzz/src/hb-raster-image.hh:37` — hb_raster_image_t
+- Code: `thirdparty/harfbuzz/src/hb-raster-paint.hh:102` — hb_raster_paint_t
 
 ## hb_shape_plan_t
 
@@ -4111,8 +4111,8 @@ Role: Retains shaping configuration for shaping execution.
 Lifecycle: Created for selected segment, feature, coordinate, and shaper configuration; reused or released through the shaping-plan API.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-shape-plan.hh` — hb_shape_plan_t
-- Code: `thirdparty/harfbuzz/src/hb-shape-plan.hh` — hb_shape_plan_key_t
+- Code: `thirdparty/harfbuzz/src/hb-shape-plan.hh:65` — hb_shape_plan_t
+- Code: `thirdparty/harfbuzz/src/hb-shape-plan.hh:35` — hb_shape_plan_key_t
 
 ## hb_subset_accelerator_t
 
@@ -4131,7 +4131,7 @@ Relationships:
 - hb_subset_accelerator_t → **hb_subset_plan_t** (one-to-many): An accelerator type is referenced by subset plans that need source-table acceleration.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-subset-accelerator.hh` — hb_subset_accelerator_t
+- Code: `thirdparty/harfbuzz/src/hb-subset-accelerator.hh:49` — hb_subset_accelerator_t
 - Code: `thirdparty/harfbuzz/src/hb-subset-plan.hh` — hb_subset_plan_t::accelerator
 
 ## hb_subset_input_t
@@ -4150,7 +4150,7 @@ Relationships:
 - hb_subset_input_t → **hb_subset_plan_t** (one-to-one): One plan records a pointer to the input that produced it.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-subset-input.hh` — hb_subset_input_t
+- Code: `thirdparty/harfbuzz/src/hb-subset-input.hh:84` — hb_subset_input_t
 - Code: `thirdparty/harfbuzz/src/hb-subset-plan.hh` — hb_subset_plan_t::input
 
 ## hb_subset_plan_t
@@ -4171,7 +4171,7 @@ Relationships:
 - hb_subset_plan_t → **hb_subset_accelerator_t** (zero-or-one-to-one): A plan may refer to one accelerator.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-subset-plan.hh` — hb_subset_plan_t
+- Code: `thirdparty/harfbuzz/src/hb-subset-plan.hh:128` — hb_subset_plan_t
 
 ## hb_unicode_funcs_t
 
@@ -4182,8 +4182,8 @@ Role: Supplies Unicode-property operations to HarfBuzz consumers.
 Lifecycle: Created and configured as a function set, then referenced by Unicode-processing operations.
 
 Evidence:
-- Code: `thirdparty/harfbuzz/src/hb-unicode.hh` — hb_unicode_funcs_t
-- Code: `thirdparty/harfbuzz/src/hb-unicode.hh` — hb_unicode_range_t
+- Code: `thirdparty/harfbuzz/src/hb-unicode.hh:40` — hb_unicode_funcs_t
+- Code: `thirdparty/harfbuzz/src/hb-unicode.hh:423` — hb_unicode_range_t
 
 ## mbedtls_ssl_session
 
@@ -4200,7 +4200,7 @@ Lifecycle: Initialized for a connection, populated during handshake, optionally 
 | `ciphersuite` | `int` | Negotiated ciphersuite identifier. |
 
 Evidence:
-- Code: `thirdparty/mbedtls/include/mbedtls/ssl.h` — struct mbedtls_ssl_session
+- Code: `thirdparty/mbedtls/include/mbedtls/ssl.h:853` — struct mbedtls_ssl_session
 - Code: `thirdparty/mbedtls/library/ssl_tls.c` — mbedtls_ssl_session_copy; mbedtls_ssl_session_save; mbedtls_ssl_session_load; mbedtls_ssl_session_free
 
 ## meshopt_Meshlet
@@ -4219,7 +4219,7 @@ Lifecycle: Caller-provided meshlet storage is populated by meshlet-building rout
 | `triangle_count` | `unsigned int` | Number of triangles in the meshlet. |
 
 Evidence:
-- Code: `thirdparty/meshoptimizer/meshoptimizer.h` — struct meshopt_Meshlet
+- Code: `thirdparty/meshoptimizer/meshoptimizer.h:701` — struct meshopt_Meshlet
 - Code: `thirdparty/meshoptimizer/clusterizer.cpp` — meshlet clustering implementation
 - Code: `thirdparty/meshoptimizer/meshletcodec.cpp` — meshlet stream codec
 
@@ -4237,8 +4237,8 @@ Lifecycle: Caller storage is seeded by `pcg32_srandom_r`, advanced by `pcg32_ran
 | `inc` | `uint64_t` | Odd stream increment used when advancing state. |
 
 Evidence:
-- Code: `thirdparty/misc/pcg.h` — pcg32_random_t
-- Code: `thirdparty/misc/pcg.cpp` — pcg32_srandom_r
+- Code: `thirdparty/misc/pcg.h:11` — pcg32_random_t
+- Code: `thirdparty/misc/pcg.cpp:18` — pcg32_srandom_r
 
 ## psa_key_attributes_t
 
@@ -4257,9 +4257,9 @@ Lifecycle: Initialized or reset by the caller, populated before generation or im
 | `policy` | `psa_key_policy_t` | Permitted usage and algorithm policy. |
 
 Evidence:
-- Code: `thirdparty/mbedtls/tf-psa-crypto/include/psa/crypto_struct.h` — struct psa_key_attributes_s
-- Code: `thirdparty/mbedtls/tf-psa-crypto/core/psa_crypto_client.c` — psa_reset_key_attributes
-- Code: `thirdparty/mbedtls/tf-psa-crypto/core/psa_crypto.c` — psa_import_key
+- Code: `thirdparty/mbedtls/tf-psa-crypto/include/psa/crypto_struct.h:304` — struct psa_key_attributes_s
+- Code: `thirdparty/mbedtls/tf-psa-crypto/core/psa_crypto_client.c:17` — psa_reset_key_attributes
+- Code: `thirdparty/mbedtls/tf-psa-crypto/core/psa_crypto.c:1762` — psa_import_key
 - Code: `thirdparty/mbedtls/tf-psa-crypto/core/psa_crypto_storage.c` — persistent key storage implementation
 
 ## rcCompactHeightfield
@@ -4279,8 +4279,8 @@ Lifecycle: Built from an `rcHeightfield`, processed by area and contour stages, 
 | `height` | `int` | Compact grid height. |
 
 Evidence:
-- Code: `thirdparty/recastnavigation/Recast/Include/Recast.h` — rcCompactHeightfield
-- Code: `thirdparty/recastnavigation/Recast/Source/RecastContour.cpp` — rcBuildContours
+- Code: `thirdparty/recastnavigation/Recast/Include/Recast.h:351` — rcCompactHeightfield
+- Code: `thirdparty/recastnavigation/Recast/Source/RecastContour.cpp:823` — rcBuildContours
 
 ## rcHeightfield
 
@@ -4302,8 +4302,8 @@ Relationships:
 - rcHeightfield → **rcCompactHeightfield** (one-to-one): One source heightfield is consumed to build one compact heightfield for a build pass.
 
 Evidence:
-- Code: `thirdparty/recastnavigation/Recast/Include/Recast.h` — rcHeightfield
-- Code: `thirdparty/recastnavigation/Recast/Source/RecastRasterization.cpp` — rcRasterizeTriangles
+- Code: `thirdparty/recastnavigation/Recast/Include/Recast.h:293` — rcHeightfield
+- Code: `thirdparty/recastnavigation/Recast/Source/RecastRasterization.cpp:478` — rcRasterizeTriangles
 
 ## spv::Function
 
@@ -4330,7 +4330,7 @@ Role: Top-level scene type for the FBX importer API.
 Lifecycle: The supplied public header indexes ufbx_scene; construction and retirement bodies are not present in the supplied excerpt.
 
 Evidence:
-- Code: `thirdparty/ufbx/ufbx.h` — ufbx_scene
+- Code: `thirdparty/ufbx/ufbx.h:574` — ufbx_scene
 
 ## wslay_event_context
 
@@ -4350,8 +4350,8 @@ Lifecycle: It persists across frame/event I/O operations and holds queued messag
 | `callbacks` | `struct wslay_event_callbacks` | Application-provided event callback table. |
 
 Evidence:
-- Code: `thirdparty/wslay/wslay_event.h` — struct wslay_event_context
-- Code: `thirdparty/wslay/wslay/wslay.h` — wslay_event_callbacks
+- Code: `thirdparty/wslay/wslay_event.h:80` — struct wslay_event_context
+- Code: `thirdparty/wslay/wslay/wslay.h:401` — wslay_event_callbacks
 
 ## xatlas::MeshDecl
 
@@ -4372,6 +4372,6 @@ Lifecycle: The caller populates the declaration and supplies it to xatlas mesh i
 | `faceVertexCount` | `const uint8_t *` | Per-face polygon vertex counts. |
 
 Evidence:
-- Code: `thirdparty/xatlas/xatlas.h` — struct MeshDecl
+- Code: `thirdparty/xatlas/xatlas.h:109` — struct MeshDecl
 - Code: `thirdparty/xatlas/xatlas.cpp` — Context and internal::Mesh
 <!-- rope-ladder:end document -->
