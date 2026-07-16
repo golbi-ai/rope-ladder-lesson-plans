@@ -1,15 +1,12 @@
-<!-- rope-ladder:begin document bb6452384d65d759d96baa7bbdec934b9096ed6b492f0c52e761e3ff47826715 -->
+<!-- rope-ladder:begin document 9649ecebe721b994b077b40773882910fde4963198dd126aaea718b7b6978d50 -->
 # Coverage report
 
 This report makes source selection and evidence limits visible; it is not a claim that omitted material was analyzed.
 
 - Indexed files: 13946
 - Eligible source files: 13847
-- Files represented in provider prompts: 13847
-- Full bodies supplied: 215
-- Skeleton-only entries supplied: 13632
-- Analysis mode: batched (35 request(s))
-- Approximate input budget per request: 96000 tokens
+- Refresh mode: cached normalized analysis
+- Provider and citation-network requests in this refresh: 0
 
 ## Exclusions
 
@@ -21,10 +18,99 @@ This report makes source selection and evidence limits visible; it is not a clai
 
 ## Evidence coverage
 
-- Both code and external evidence: 228
+- Both code and external evidence: 229
 - Code-only: 561
 - External-only: 0
 - No evidence: 0
+
+## Scope
+
+- Vendored-code policy in effect: survey
+- Vendored share of eligible files: 4799 of 13847 (34%)
+- Vendored share of prompt files: 0 of 0
+- Topics by scope: 310 first-party, 247 vendored
+- Background domain topics (admitted on a verified primary/official citation, no code anchor): 1
+- Entities by scope: 116 first-party, 117 vendored
+- Architecture components by scope: 166 first-party, 106 vendored
+
+## Citation verification
+
+- External citations in the rendered curriculum: 238
+- Verified against the source anchor: 86 of 238 (36%)
+- Unverified: 152 of 238 (63%)
+- Unchecked (offline): 0 of 238 (0%)
+
+Unverified citations by reason:
+
+- 3: unverified (no local verification cache)
+- 149: unverified (source anchor not found)
+
+## Severed entity relationships
+
+Relationships whose target did not resolve to any diagrammed entity, even after deterministic fuzzy matching; they are reported here rather than drawn as diagram edges.
+
+- AABBTreeBuilder one-to-many AABBTreeBuilder::Node: One builder owns an array of tree nodes.
+- AudioStreamInteractive Transition many-to-one AudioStreamInteractive: Many transition rules belong to one interactive stream.
+- CameraFeed one-to-many StreamingBuffer: One active feed can receive many captured streaming buffers over its lifetime.
+- CollisionShape2D many-to-one Node: The collision-shape node is placed beneath a collision-object node.
+- DAP::Source one-to-many DAP::Breakpoint: A source can be referenced by multiple breakpoint descriptors.
+- EditedScene one-to-one EditorUndoRedoManager::History: Each edited scene records one history ID that identifies its undo/redo history.
+- Face one-to-many Silf: The face selects a SILF object by script.
+- GDExtension one-to-many ClassInfo: One extension can register metadata for multiple extension classes.
+- GLTFBufferView one-to-many GLTFAccessor: One view can supply raw bytes to multiple accessors.
+- GLTFBufferView many-to-one GLTFState: Many buffer views are indexed by one GLTFState.
+- GLTFSkin many-to-one GLTFState: Many skins are indexed by one GLTFState.
+- GodotSoftBody3D many-to-one GodotCollisionObject3D: GodotSoftBody3D derives from the native 3D collision-object hierarchy.
+- GodotSoftBody3D many-to-one GodotSpace3D: Many soft bodies can be active in one 3D space.
+- Halfedge many-to-one MeshRelationD: Halfedges belong to an internal mesh whose relation data is maintained alongside topology.
+- JoltSpace3D one-to-many JoltBody3D: One space tracks many active rigid and soft Jolt bodies.
+- JoltSpace3D one-to-many JoltShape3D: Queries in one space can operate on many Jolt-backed shapes.
+- KTX2 Private Texture State one-to-many KTX Level Index Entry: The growable level index contains one entry for each stored texture level.
+- Material many-to-many Mesh: Materials can be reused by mesh surfaces, and meshes can use materials on multiple surfaces.
+- MotionProperties one-to-one Body: MotionProperties provides the dynamic state used by its associated movable Body.
+- NavigationPathQueryParameters2D one-to-one NavigationPathQueryResult2D: A submitted parameter object populates one result object for a query execution.
+- ProjectCatalog one-to-many ProjectCatalogItem: One catalog holds many project records.
+- ProjectSettings one-to-many ProjectSettings::VariantContainer: One ProjectSettings instance stores many named setting containers.
+- RDPipelineSpecializationConstant many-to-one RDPipelineShader: A pipeline shader holds an array of specialization constants.
+- RDTextureFormat one-to-many RDTextureView: Texture views can select a shareable format declared by the corresponding texture format.
+- RVOSimulator2D one-to-many Agent2D: The simulator manages multiple agents addressed through its agent API.
+- RVOSimulator2D one-to-many Obstacle2D: The simulator manages obstacle vertices addressed through its obstacle API.
+- RenderSceneBuffersConfiguration many-to-one RenderSceneBuffers: A configuration object is passed to configure one RenderSceneBuffers object.
+- Scene Fixture one-to-many Completion Test Configuration: One scene fixture provides contextual information to many completion configurations.
+- SceneReplicationConfig one-to-many ReplicationProperty: One SceneReplicationConfig contains many configured replication properties.
+- SceneState one-to-many Node: SceneState node entries reconstruct many Node instances.
+- Segment many-to-one Silf: Each segment retains one selected SILF behavior.
+- Segment one-to-many Slot: A segment exposes first and last slots, and slots can be traversed within that segment.
+- ShaderMaterial many-to-one Shader: Multiple ShaderMaterial resources can use one Shader with different parameter values.
+- Skeleton one-to-many Joint: One Skeleton owns an ordered vector of Joint records.
+- SkeletonModificationStack2D one-to-many SkeletonModification2D: A stack holds an ordered set of 2D modifications.
+- SoftBodySharedSettings one-to-many Body: One shared settings object can initialize motion state for multiple soft-body Body instances.
+- SpoofImpl one-to-one USpoofChecker: The public checker handle is validated to its internal SpoofImpl.
+- SubGrid many-to-one GridMesh: Many SubGrid primitives can identify regions of one GridMesh through geomID and primID.
+- Test Script Fixture one-to-one Completion Test Configuration: One completion script conventionally has one same-basename `.cfg` assertion file.
+- Theme one-to-many StyleBox: A theme can provide StyleBox values for control theme properties.
+- TileMapLayerCellData many-to-one TileMapLayer: A TileMapLayer stores many cell-data records in its coordinate-keyed map.
+- TriRef many-to-one MeshRelationD: Many triangle references are stored in one mesh relation's triRef collection.
+- TwoBodyConstraint many-to-two Body: Each TwoBodyConstraint links exactly two Body instances, while a Body can appear in many constraints.
+- UCPTrie many-to-one Normalizer2Impl: Normalizer2Impl references a normalization UCPTrie.
+- UResourceBundle one-to-many ResourceDataValue: A bundle can expose multiple resource values.
+- VP8LHashChain one-to-many VP8LBackwardRefs: One hash chain can generate multiple temporary or alternative backward-reference sets.
+- VisualShaderConnection many-to-one VisualShaderNode: Each endpoint identifies a node and one of its ports; a node can participate in many connections.
+- WebPPicture zero-to-one WebPAuxStats: A picture optionally updates one statistics aggregate through stats.
+- WebPPicture zero-to-one WebPMemoryWriter: A picture can use WebPMemoryWrite with a WebPMemoryWriter stored through custom_ptr.
+- WebSocketMultiplayerPacket many-to-one WebSocketMultiplayerPeer: A multiplayer peer maintains multiple packet records over time.
+- XrGeneratedDispatchTableCore one-to-one LoaderInstance: Each loader instance retains one core dispatch table through its dispatch-table ownership member.
+- XrInstanceCreateInfo one-to-many OpenXR API layer name: The structure can name multiple enabled API layers.
+- XrInstanceCreateInfo one-to-many OpenXR extension name: The structure can name multiple enabled extensions.
+- XrInstanceCreateInfo one-to-zero-or-one OpenXR structure-chain node: The `next` field points to the optional first node of a chain.
+- hb_raster_image_t one-to-many hb_raster_paint_t: Raster paint can process multiple raster images during a paint operation.
+- hb_shape_plan_t one-to-one hb_shape_plan_key_t: A plan is keyed by one shaping configuration.
+- hb_unicode_funcs_t one-to-many hb_unicode_range_t: Unicode ranges support the Unicode-function implementation.
+- rcCompactHeightfield one-to-many rcCompactCell: The compact heightfield contains one cell per grid location.
+- rcCompactHeightfield one-to-many rcCompactSpan: Its cells index many compact spans.
+- rcCompactHeightfield one-to-one rcContourSet: A build pass extracts one contour set from the compact heightfield.
+- rcHeightfield one-to-many rcSpan: The heightfield has many span nodes distributed across its grid columns.
+- spv::Function one-to-many spv::Block: One function contains zero or more basic blocks.
 
 ## Topics omitted for missing resolvable code evidence
 
@@ -169,7 +255,6 @@ This report makes source selection and evidence limits visible; it is not a clai
 - Retained paint scenes
 - SIMD math and parallel algorithms
 - SPIR-V control-flow analysis
-- SPIR-V intermediate representation
 - SVG import and scene construction
 - SVG paths and styles
 - Scene multiplayer and RPC
